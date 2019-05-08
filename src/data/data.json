@@ -1,0 +1,73 @@
+[
+  {
+    "key": "arbeitslosenquote",
+    "type": "draw",
+    "config": {
+      "unit": "%",
+      "max": 20,
+      "breakpoint": 2005
+    },
+    "values": [
+      { "key": 2002, "value": 9.8 },
+      { "key": 2003, "value": 10.5 },
+      { "key": 2004, "value": 10.5 },
+      { "key": 2005, "value": 11.7 },
+      { "key": 2006, "value": 10.8 },
+      { "key": 2007, "value": 9.0 },
+      { "key": 2008, "value": 7.8 },
+      { "key": 2009, "value": 8.1 },
+      { "key": 2010, "value": 7.7 },
+      { "key": 2011, "value": 7.1 },
+      { "key": 2012, "value": 6.8 },
+      { "key": 2013, "value": 6.9 },
+      { "key": 2014, "value": 6.7 },
+      { "key": 2015, "value": 6.4 },
+      { "key": 2016, "value": 6.1 }
+    ],
+    "annotations": [
+      {
+        "key": 2009,
+        "value": 8.1,
+        "color": "#000",
+        "text": "Finanzkrise"
+      }
+    ]
+  },
+  {
+    "key": "aufgaben",
+    "type": "sort",
+    "config": {
+      "unit": "%"
+    },
+    "values": [
+      { "key": "Klimawandel aufhalten", "value": 21 },
+      { "key": "Terrorismus bekämpfen", "value": 17 },
+      { "key": "Frieden sichern", "value": 17 },
+      { "key": "Migration managen", "value": 13 },
+      { "key": "Bürgerrechte schützen", "value": 12 }
+    ]
+  },
+  {
+    "key": "fake",
+    "type": "quiz",
+    "config": {
+      "unit": "Boolean"
+    },
+    "values": [
+      { "key": "Deutschland", "value": false },
+      { "key": "Italien", "value": false },
+      { "key": "Spanien", "value": false },
+      { "key": "Portugal", "value": true }
+    ]
+  },
+  {
+    "key": "trust",
+    "type": "guess",
+    "config": {
+      "unit": "%"
+    },
+    "values": [
+      { "key":  50 }
+    ]
+  }
+]
