@@ -1,5 +1,148 @@
 [
   {
+    "id": "erwerbstaetigenquote",
+    "type": "draw",
+    "config": {
+      "unit": "%",
+      "max": 80,
+      "breakpoint": 2005
+    },
+    "values": [
+      { "key": 2004, "value": 55.4 },
+      { "key": 2005, "value": 56.0 },
+      { "key": 2006, "value": 57.0 },
+      { "key": 2007, "value": 58.1 },
+      { "key": 2008, "value": 58.8 },
+      { "key": 2009, "value": 58.3 },
+      { "key": 2010, "value": 58.2 },
+      { "key": 2011, "value": 58.4 },
+      { "key": 2012, "value": 58.6 },
+      { "key": 2013, "value": 58.8 },
+      { "key": 2014, "value": 59.6 },
+      { "key": 2015, "value": 60.4 },
+      { "key": 2016, "value": 61.4 },
+      { "key": 2017, "value": 62.4 },
+      { "key": 2018, "value": 63.3 }
+    ]
+  },
+  {
+    "id": "wald",
+    "type": "draw",
+    "config": {
+      "unit": "in Tausend Hektar",
+      "max": 170.000,
+      "breakpoint": 2000
+    },
+    "values": [
+      { "key": 1990, "value": 147.956 },
+      { "key": 2000, "value": 154.740 },
+      { "key": 2005, "value": 156.758 },
+      { "key": 2010, "value": 159.236 },
+      { "key": 2015, "value": 160.931 }
+    ]
+  },
+  {
+    "id": "populisten",
+    "type": "draw",
+    "config": {
+      "unit": "%",
+      "max": 25,
+      "breakpoint": 1984
+    },
+    "values": [
+      { "key": 1979, "value": 0.0 },
+      { "key": 1984, "value": 2.2 },
+      { "key": 1989, "value": 2.5 },
+      { "key": 1994, "value": 3.5 },
+      { "key": 1999, "value": 4.2 },
+      { "key": 2004, "value": 8.5 },
+      { "key": 2009, "value": 11.5 },
+      { "key": 2014, "value": 21.7 },
+      { "key": 2019, "value": 15.5 }
+    ]
+  },
+  {
+    "id": "jugendarbeitslosigkeit",
+    "type": "sort",
+    "config": {
+      "unit": "%",
+      "order": "descending"
+    },
+    "values": [
+      { "key": "Griechenland", "value": 39.7 },
+      { "key": "Spanien", "value": 33.7 },
+      { "key": "Italien", "value": 30.2 },
+      { "key": "Frankreich", "value": 20.2 },
+      { "key": "Schweden", "value": 17.7 },
+      { "key": "Bulgarien", "value": 13.4 },
+      { "key": "Dänemark", "value": 9.7 },
+      { "key": "Tschechien", "value": 6.3 },
+      { "key": "Deutschland", "value": 5.6 }
+    ]
+  },
+  {
+    "id": "prios",
+    "type": "sort",
+    "config": {
+      "unit": "%",
+      "order": "descending"
+    },
+    "values": [
+      { "key": "Klimawandel aufhalten", "value": 21 },
+      { "key": "Terrorismus bekämpfen", "value": 17 },
+      { "key": "Frieden sichern", "value": 17 },
+      { "key": "Migration managen", "value": 13 },
+      { "key": "Bürgerrechte schützen", "value": 12 }
+    ]
+  },
+  {
+    "id": "trust",
+    "type": "guess",
+    "config": {
+      "unit": "%"
+    },
+    "values": [
+      { "key": 48 }
+    ]
+  },
+  {
+    "id": "aufgaben",
+    "type": "sort",
+    "config": {
+      "unit": "in Tausend Tonnen",
+      "order": "descending"
+    },
+    "values": [
+      { "key": "Energie", "value": 3352172.89 },
+      { "key": "Industrielle Prozesse und Produktverwendung", "value": 374482.74 },
+      { "key": "Landwirtschaft", "value": 430001.72 },
+      { "key": "Abfall- und Abwasserbehandlung", "value": 138496.47 }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {
     "id": "arbeitslosenquote",
     "type": "draw",
     "config": {
@@ -60,7 +203,7 @@
       "unit": "%"
     },
     "values": [
-      { "key":  50 }
+      { "key": 48 }
     ]
   }
 ]
