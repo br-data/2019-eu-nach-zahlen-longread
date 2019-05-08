@@ -30,7 +30,7 @@ Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit d
 </section>
 ```
 
-In der JSON-Datei muss dazu ein neues Objekt hinzugefügt werden:
+In der JSON-Datei muss dazu ein neues Objekt, in diesem Fall mit der `"id": "trust"`, hinzugefügt werden:
 
 ```json
 {
@@ -48,7 +48,7 @@ In der JSON-Datei muss dazu ein neues Objekt hinzugefügt werden:
 Es gilt zu beachten, dass jeder Fragetyp leicht andere Konfigurationsoptionen hat und bestimmte Werteangaben erwartet. Daher empfiehlt es sich die neue Datenobjekte aus der Vorlage `src/data/data.template.json` zu kopieren.
 
 Zur Zeit gibt es vier verschiedene Fragetypen:
-- `draw`: Liniendiagramm weiterzeichen, um die Entwicklung eines bestimmten Indikators zu schätzen
+- `draw`: Liniendiagramm weiterzeichnen, um die Entwicklung eines bestimmten Indikators zu schätzen
 - `sort`: Einträge auf- oder absteigend nach einem bestimmten Indikator sortieren
 - `quiz`: eine Auswahl an Fragen, von denen eine richtig ist
 - `guess`: einen Wert schätzen
