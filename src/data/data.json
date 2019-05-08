@@ -23,21 +23,14 @@
       { "key": 2014, "value": 6.7 },
       { "key": 2015, "value": 6.4 },
       { "key": 2016, "value": 6.1 }
-    ],
-    "annotations": [
-      {
-        "key": 2009,
-        "value": 8.1,
-        "color": "#000",
-        "text": "Finanzkrise"
-      }
     ]
   },
   {
     "id": "aufgaben",
     "type": "sort",
     "config": {
-      "unit": "%"
+      "unit": "%",
+      "order": "descending"
     },
     "values": [
       { "key": "Klimawandel aufhalten", "value": 21 },
@@ -54,10 +47,10 @@
       "unit": "Boolean"
     },
     "values": [
-      { "key": "Deutschland", "value": false },
-      { "key": "Italien", "value": false },
-      { "key": "Spanien", "value": false },
-      { "key": "Portugal", "value": true }
+      { "key": "Deutschland", "value": 40, "correct": false },
+      { "key": "Italien", "value": 60, "correct": true },
+      { "key": "Spanien", "value": 10, "correct": false },
+      { "key": "Portugal", "value": 30, "correct": false }
     ]
   },
   {
