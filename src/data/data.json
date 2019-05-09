@@ -106,7 +106,7 @@
     ]
   },
   {
-    "id": "aufgaben",
+    "id": "treibhaus",
     "type": "sort",
     "config": {
       "unit": "in Tausend Tonnen",
@@ -119,24 +119,45 @@
       { "key": "Abfall- und Abwasserbehandlung", "value": 138496.47 }
     ]
   },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  {
+    "id": "age",
+    "type": "quiz",
+    "config": {
+      "unit": "Boolean"
+    },
+    "values": [
+      { "key": "Irland", "value": 36.9, "correct": false },
+      { "key": "Italien", "value": 45.9, "correct": true },
+      { "key": "Deutschland", "value": 45.9, "correct": false },
+      { "key": "Spanien", "value": 43.2, "correct": false }
+    ]
+  },
+  {
+    "id": "auslaenderanteil",
+    "type": "quiz",
+    "config": {
+      "unit": "Boolean"
+    },
+    "values": [
+      { "key": "Luxemburg", "value": 47.84, "correct": true },
+      { "key": "Schweden", "value": 8.75, "correct": false },
+      { "key": "Deutschland", "value": 11.69, "correct": false },
+      { "key": "Litauen", "value": 0.97, "correct": false }
+    ]
+  },
+  {
+    "id": "vegetarier",
+    "type": "quiz",
+    "config": {
+      "unit": "Boolean"
+    },
+    "values": [
+      { "key": "Vereintes Königreich", "value": 10, "correct": true },
+      { "key": "Deutschland", "value": 6, "correct": false },
+      { "key": "Spanien", "value": 5, "correct": false },
+      { "key": "Frankreich", "value": 5, "correct": false }
+    ]
+  },
 
 
 
