@@ -1,0 +1,131 @@
+.draw {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+
+  svg {
+    overflow: visible;
+  }
+
+  text {
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  circle {
+    stroke: none;
+    transform: scale(1);
+  }
+
+  path {
+    fill: none;
+  }
+
+  .canvas {
+    stroke: none;
+    fill: $white;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  .axis {
+    line, path {
+      stroke: $medium-grey;
+      stroke-width: 1;
+    }
+  }
+
+  .grid {
+    .tick:first-child {
+      display: none;
+    }
+
+    line {
+      stroke: $medium-grey;
+      stroke-width: 1;
+    }
+
+    path {
+      stroke: none;
+      stroke-width: 0;
+    }
+  }
+
+  .previous, .current, .user, .hint, .annotations {
+    text {
+      text-shadow: 1px 0 0 $white, 0 1px 0 $white, -1px 0 0 $white, 0 -1px 0 $white;
+    }
+  }
+
+  .hint {
+    path {
+      fill: $black;
+    }
+
+    text {
+      font-size: 16px;
+      font-style: italic;
+    }
+  }
+
+  .previous {
+    circle {
+      fill: $blue;
+    }
+
+    path {
+      stroke-width: 3;
+      stroke: $blue;
+    }
+  }
+
+  .current {
+    circle {
+      fill: $black;
+    }
+
+    path {
+      stroke-width: 3;
+      stroke: $black;
+    }
+  }
+
+  .user {
+    circle {
+      fill: $dark-grey;
+    }
+
+    path {
+      stroke: $dark-grey;
+      stroke-width: 3;
+      stroke-dasharray: 1 7;
+      stroke-linecap: round;
+    }
+  }
+
+  .pulse {
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: pulse;
+    transition-timing-function: ease;
+  }
+
+  .move {
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: move;
+    transition-timing-function: ease;
+  }
+
+  @keyframes pulse {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(3); opacity: 0; }
+  }
+
+  @keyframes move {
+    0% { transform: translate(5px, 10px); opacity: 1; }
+    50% { transform: translate(120px, 25px); opacity: .9; }
+    75% { transform: translate(290px, 20px); opacity: 0; }
+    100% { transform: translate(290px, 20px); opacity: 0; }
+  }
+}

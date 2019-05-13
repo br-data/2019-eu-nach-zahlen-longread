@@ -19,7 +19,7 @@ Neue Fragen können in `scr/index.html` hinzugefügt werden. Die Daten und Einst
 Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit der `data-id="trust"` hinzugefügt.
 
 ```html
-<section data-id="trust">
+<div class="block" data-id="trust">
   <h2>Schätzen Sie den Wert? Wie hoch ist der Anteil der EU-Bürger, die dem EP vertrauen?</h2>
 
   <div class="content"></div>
@@ -27,7 +27,7 @@ Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit d
   <button class="reset"><i class="icon-ccw"></i></button>
 
   <p class="answer"><strong>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.</p>
-</section>
+</div>
 ```
 
 In der JSON-Datei muss dazu ein neues Objekt, in diesem Fall mit der `"id": "trust"`, hinzugefügt werden:

@@ -30,7 +30,7 @@
     "type": "draw",
     "config": {
       "unit": "in Tausend Hektar",
-      "max": 170.000,
+      "max": 250.000,
       "breakpoint": 2000
     },
     "values": [
