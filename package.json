@@ -1,0 +1,51 @@
+{
+  "name": "eu-nach-zahlen-longread",
+  "description": "Interactive quiz format to learn about the EU",
+  "author": "Steffen Kühne",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:br-data/eu-nach-zahlen-longread.git"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.config.prod.js --colors",
+    "clear": "rm -rf dist/",
+    "clear:all": "rm -rf node_modules/ && npm run clear",
+    "count": "find src -name '*.js' | xargs wc -l | sort -r",
+    "start": "webpack-dev-server --open --config webpack.config.dev.js"
+  },
+  "dependencies": {
+    "d3": "^5.9.2",
+    "intersection-observer": "^0.5.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "autoprefixer": "^9.3.1",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^2.0.2",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.7",
+    "eslint": "^5.7.0",
+    "eslint-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.9.4",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.4.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.21.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  }
+}
