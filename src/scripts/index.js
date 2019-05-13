@@ -26,8 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   populisten.init();
 
-
-
   // analytics({
   //   serviceUrl: 'https://ddj.br.de/analytics/track',
   //   projectId: 'pestizide',

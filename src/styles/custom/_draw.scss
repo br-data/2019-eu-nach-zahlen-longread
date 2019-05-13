@@ -8,8 +8,9 @@
   }
 
   text {
+    font-weight: normal;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   circle {
@@ -28,43 +29,40 @@
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
 
-  .axis {
+  .x-axis, .y-axis {
     line, path {
       stroke: $medium-grey;
       stroke-width: 1;
+      shape-rendering: crispEdges;
     }
   }
 
-  .grid {
-    .tick:first-child {
+  .y-axis {
+    .tick:first-of-type {
       display: none;
-    }
-
-    line {
-      stroke: $medium-grey;
-      stroke-width: 1;
-    }
-
-    path {
-      stroke: none;
-      stroke-width: 0;
     }
   }
 
   .previous, .current, .user, .hint, .annotations {
     text {
-      text-shadow: 1px 0 0 $white, 0 1px 0 $white, -1px 0 0 $white, 0 -1px 0 $white;
+      stroke: $white;
+      stroke-width: 5;
+      paint-order: stroke;
     }
   }
 
   .hint {
     path {
-      fill: $black;
+      stroke: $black;
+      stroke-width: 2;
+      fill: $white;
     }
 
     text {
-      font-size: 16px;
-      font-style: italic;
+      font-size: 17px;
+      font-weight: bold;
+      fill: $black;
+      stroke: none;
     }
   }
 
@@ -74,32 +72,44 @@
     }
 
     path {
-      stroke-width: 3;
+      stroke-width: 4;
       stroke: $blue;
+    }
+
+    text {
+      fill: $blue;
     }
   }
 
   .current {
     circle {
-      fill: $black;
+      fill: $yellow;
     }
 
     path {
-      stroke-width: 3;
-      stroke: $black;
+      stroke-width: 4;
+      stroke: $yellow;
+    }
+
+    text {
+      fill: $yellow;
     }
   }
 
   .user {
     circle {
-      fill: $dark-grey;
+      fill: $black;
     }
 
     path {
-      stroke: $dark-grey;
-      stroke-width: 3;
+      stroke: $black;
+      stroke-width: 4;
       stroke-dasharray: 1 7;
       stroke-linecap: round;
+    }
+
+    text {
+      fill: $black;
     }
   }
 

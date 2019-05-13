@@ -32,48 +32,9 @@ const Draw = options => {
     mobile: false
   };
 
-  $pointer = 'M20.5 28.7h-11c-.5 0-.9-.4-.9-.9 0-1.4-.7-2.3-1.7-3.5-.5-.7-1.2-1.5-1.8-2.4-1.7-2.8-3.2-6-3.6-7.3-.4-1.3-.1-2 .2-2.4.4-.6 1.1-.9 1.9-.9 1.1 0 2.3.9 3.2 2.1V3.9c0-1.5 1.3-2.8 2.7-2.8 1.5 0 2.8 1.3 2.8 2.8v3.9c.3-.1.5-.2.9-.2 1 0 1.8.5 2.3 1.3.4-.2.9-.4 1.3-.4 1.3 0 2.3.9 2.6 2 .3-.1.6-.2 1-.2 1.5 0 2.8 1.3 2.8 2.8v2.8c0 2.3-.5 4.3-.9 6.1-.5 1.9-.9 3.6-.9 5.8.1.4-.4.9-.9.9zm-10.1-1.8h9.3c.1-2 .5-3.7.9-5.3.5-1.8.9-3.6.9-5.7V13c0-.5-.4-.9-.9-.9s-.9.4-.9.9v1c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-2.9c0-.5-.4-.9-.9-.9s-.9.4-.9.9v2c0 .5-.4.9-.9.9s-.9-.4-.9-.9v-2.9c0-.5-.4-.9-.9-.9s-.9.4-.9.9v2c0 .5-.4.9-.9.9s-.9-.4-.9-.9V3.7c0-.5-.4-.9-.9-.9s-1.2.4-1.2.9v14c0 .5-.4.9-.9.9s-.9-.4-.9-.9V17c-.8-2.1-2.6-4-3.2-4-.2 0-.4.1-.4.2-.1.1-.1.4 0 .8.3 1 1.7 4 3.5 6.8.6.9 1.2 1.6 1.7 2.3.9 1.2 1.7 2.3 2 3.8z';
+  $pointer = 'M12.6 26.5c-2.1 0-4-1.3-4.9-2.5-.5-.7-2.2-3.3-3.7-5.6-1.1-1.6-2.2-3.3-2.4-3.6v-.1c-.2-.4-.3-.8-.2-1.2.1-.4.4-.8.8-1.1.3-.2.7-.4 1.1-.4h.2c.6.1 1 .3 1.2.7l2.7 4V3c0-1 .9-1.9 1.9-1.9s1.9.9 1.9 1.9v9.8-3.6l.3-.2c.3-.2.6-.3 1-.3.7 0 1.4.5 1.7 1.1l.1.1v3-3.1l.3-.2c.4-.3.7-.4 1.1-.4.8 0 1.5.5 1.8 1.3v2.7-2.6l.3-.2c.3-.2.7-.4 1.1-.4 1 0 1.7.8 1.7 1.9v8.5c0 3.3-2.7 5.9-6 5.9h-2z';
 
   $data = {};
-
-  // Election years
-  $data.elections = [2002, 2005, 2009, 2013, 2017];
-
-  // Last German government coalitions
-  $data.coalitions = [
-    {
-      text: 'Schröder II',
-      values: [{ key: 2002 }, { key: 2005 }],
-      colors: ['#e2001a', '#20ac00']
-    }, {
-      text: 'Merkel I',
-      values: [{ key: 2005 }, { key: 2009 }],
-      colors: ['#000', '#e2001a']
-    }, {
-      text: 'Merkel II',
-      values: [{ key: 2009 }, { key: 2013 }],
-      colors: ['#000', '#f4e000']
-    }, {
-      text: 'Merkel III',
-      values: [{ key: 2013 }, { key: 2017 }],
-      colors: ['#000', '#e2001a']
-    }
-  ];
-
-  // Chancellorship of Gehard Schröder and Angela Merkel
-  $data.labels = [
-    {
-      text: 'SCHRÖDER',
-      color: '#102087',
-      getYear() { return middleYear($data.previous); },
-      getValue() { return $app.height - 20; }
-    }, {
-      text: 'MERKEL',
-      color: '#000',
-      getYear() { return middleYear($data.current); },
-      getValue() { return $app.height - 20; }
-    }
-  ];
 
   function init() {
     // options.element = document.getElementById(`#${options.id}`);
@@ -105,7 +66,6 @@ const Draw = options => {
   function calculate() {
     $app.yMin = 0;
     $app.yMax = $data.data.config.max;
-    // $app.yMax = d3.max($data.data.values, function (d) { return d.value; }) * 1.5;
     $app.xMin = d3.min($data.data.values, d => d.key);
     $app.xMax = d3.max($data.data.values, d => d.key);
 
@@ -149,36 +109,12 @@ const Draw = options => {
       .attr('id', `clip-${options.id}`)
       .append('rect');
 
-    // Small circles to indicate the respective coaltion
-    // $app.coalitions.group = $app.svg.append('g')
-    //   .attr('class', 'coalitions')
-    //   .selectAll('g')
-    //   .data($data.coalitions)
-    //   .enter()
-    //   .append('g');
-
-    // $app.coalitions.group.selectAll('circle')
-    //   .data(({colors}) => colors)
-    //   .enter()
-    //   .append('circle');
-
     // Axis
     $app.xAxis.group = $app.svg.append('g')
-      .attr('class', 'axis');
+      .attr('class', 'x-axis');
 
     $app.yAxis.group = $app.svg.append('g')
-      .attr('class', 'grid');
-
-    // Labels for the respective incumbents
-    // $app.labels.group = $app.svg.append('g')
-    //   .attr('class', 'labels')
-    //   .selectAll('.label')
-    //   .data($data.labels)
-    //   .enter()
-    //   .append('g');
-
-    // $app.labels.group
-    //   .append('text');
+      .attr('class', 'y-axis');
 
     // User line and label
     $app.user.group = $app.svg.append('g')
@@ -272,14 +208,15 @@ const Draw = options => {
     // Axis
     $app.xAxisConstructor = d3.axisBottom()
       .scale($app.x)
-      .tickSize(-7)
+      .ticks(7)
+      .tickSizeInner(-$app.height)
+      .tickSizeOuter(0)
       .tickPadding(10)
-      .tickValues($data.elections)
       .tickFormat(d => d);
 
     $app.yAxisConstructor = d3.axisRight()
       .scale($app.y)
-      .ticks(6)
+      .ticks(5)
       .tickSizeInner(-$app.width)
       .tickSizeOuter(0)
       .tickPadding(10)
@@ -297,34 +234,8 @@ const Draw = options => {
       .attr('transform', $state.mobile ? 'rotate(-90)' : 'rotate(0)')
       .style('text-anchor', smartAnchors);
 
-    // Add a custom, extra long, line to the x-axis
-    // $app.xAxis.group
-    //   .select('path')
-    //   .attr('d', $app.lineConstructor([
-    //     { year: $data.elections[0], value: $app.yMax },
-    //     { year: $data.elections[$data.elections.length - 1], value: $app.yMax }
-    //   ]));
-
     $app.yAxis.group
       .call($app.yAxisConstructor);
-
-    // Coalition circles
-    // $app.coalitions.group
-    //   .attr('class', ({text}) => dashcase(text))
-    //   .attr('transform', ({values}) => `translate(${middleYear(values)},${$app.height + 17})`);
-
-    // $app.coalitions.group.selectAll('circle')
-    //   .attr('cx', (d, i) => i * 7) // Offset all circles by 7px
-    //   .attr('r', 6)
-    //   .attr('fill', d => d);
-
-    // Fixed labels
-    // $app.labels.group
-    //   .attr('transform', d => `translate(${d.getYear()},${d.getValue()})`)
-    //   .selectAll('text')
-    //   .attr('fill', ({color}) => color)
-    //   .attr('text-anchor', 'middle')
-    //   .text(({text}) => text);
 
     // User line and marker
     $app.user.group
@@ -349,7 +260,7 @@ const Draw = options => {
       .attr('font-weight', 'bold')
       .attr('text-anchor', 'end');
 
-    // Current (Merkel) line and marker
+    // Current line and marker
     $app.current.group.line.path.attr('d', $app.lineConstructor($data.current));
 
     $app.current.group.line.dots
@@ -366,7 +277,7 @@ const Draw = options => {
       .style('opacity', $state.completed ? 1 : 0) // Hide initially
       .text(pretty(lastValue($data.current)));
 
-    // Previous (Schröder) line and maker
+    // Previous line and maker
     $app.previous.group.line
       .attr('d', $app.lineConstructor($data.previous));
 
@@ -410,13 +321,11 @@ const Draw = options => {
       .attr('text-anchor', 'start')
       .text('Zeichnen Sie die Linie'); // Draw the Line!
 
-    // Show pointer animation only in the first chart
-    if ($app.id === 'arbeitslosenquote') {
-      $app.hint.group.path
-        .classed('move', true)
-        .attr('transform', 'translate(5, 10)')
-        .attr('d', $pointer);
-    }
+    // Show pointer animation
+    $app.hint.group.path
+      .classed('move', true)
+      .attr('transform', 'translate(5, 10)')
+      .attr('d', $pointer);
 
     // Users can interact in this area, nowhere else
     $app.canvas
@@ -652,28 +561,9 @@ const Draw = options => {
     return objArr[0].key;
   }
 
-  // Get x value for the year between the first and last year
-  function middleYear(objArr) {
-    const first = firstYear(objArr);
-    const last = lastYear(objArr);
-
-    return $app.x(((last - first) / 2) + first);
-  }
-
   // Get year from last object in an array
   function lastYear(objArr) {
     return objArr[objArr.length - 1].key;
-  }
-
-  // convert-to-dashcase
-  function dashcase(string) {
-    return string.replace(/\s+/g, '-')
-      .toLowerCase()
-      .replace('ä', 'ae')
-      .replace('ö', 'oe')
-      .replace('ü', 'ue')
-      .replace('ß', 'ss')
-      .replace(/[^a-z0-9-]/g, '');
   }
 
   // Clone a JavaScript object (doesn't work for functions)
