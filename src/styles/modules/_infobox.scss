@@ -1,0 +1,16 @@
+// Info box
+.infobox {
+  background: $light-grey;
+  padding: 1.5em;
+  margin-bottom: 2em;
+
+  h1, h2, h3 {
+    margin-top: 0;
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: .5em;
+    }
+  }
+}

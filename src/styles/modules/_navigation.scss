@@ -1,0 +1,83 @@
+// Sticky navigation
+.navigation {
+  color: $white;
+  height: 60px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(
+    to bottom,
+  #434343 0%,
+  #434343 80%,
+  #009dd4 80%,
+  #009dd4 101%
+  );
+
+  @include mobile {
+    height: 50px;
+    background: #434343;
+  }
+
+  @include future {
+    height: 70px;
+  }
+
+  section {
+    margin-top: 5px;
+    pointer-events: none;
+
+     @include future {
+      margin-top: 8px;
+    }
+  }
+
+  .logo {
+
+    img {
+      margin-right: 20px;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+      float: left;
+
+      @include mobile {
+        width: 50px;
+        height: 50px;
+      }
+
+      @include future {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+
+  .logo:hover {
+    filter: brightness(90%);
+  }
+
+  .title {
+    line-height: 40px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .sharing {
+    margin: 5px 1em 0;
+    float: right;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+
+    @include future {
+      margin-top: 8px;
+    }
+  }
+}

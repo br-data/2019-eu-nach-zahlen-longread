@@ -1,0 +1,44 @@
+// Mediaqueries and margins for different devices
+$desktop-width: 1535px;
+$tablet-width: 840px;
+$mobile-width: 560px;
+$legacy-width: 380px;
+
+$margin-desktop: 0 20% 0 10%;
+$margin-tablet: 10%;
+$margin-mobile: 20px;
+
+@mixin future {
+
+  @media (min-width: #{$desktop-width + 1}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+
+  @media (min-width: #{$tablet-width + 1}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+
+  @media (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin legacy {
+
+  @media (max-width: #{$legacy-width}) {
+    @content;
+  }
+}

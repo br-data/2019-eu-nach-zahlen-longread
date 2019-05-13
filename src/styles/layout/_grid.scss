@@ -1,0 +1,101 @@
+// Faux grid layout
+article {
+  overflow-x: hidden;
+}
+
+section {
+  max-width: 940px;
+  margin: 0 auto 4em;
+}
+
+// Text level indent blocks
+.block {
+  margin: $margin-desktop;
+
+  @include tablet {
+    margin: 0 $margin-tablet;
+  }
+
+  @include mobile {
+    margin: 0 $margin-mobile;
+  }
+
+  img {
+
+    @include mobile {
+      width: calc(100% + #{$margin-mobile + $margin-mobile});
+      margin-left: -$margin-mobile;
+    }
+  }
+}
+
+// Simple two column grid
+.grid {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  [class*="col-"] {
+    width: 100%;
+    float: left;
+  }
+
+  @include desktop {
+
+    .col-1-1 {
+      width: 100%;
+    }
+
+    .col-1-2 {
+      width: 50%;
+    }
+
+    .col-1-3 {
+      width: 33%;
+    }
+  }
+
+  @include tablet {
+
+    .col-1-2 {
+      width: 100%;
+    }
+
+    .col-1-3 {
+      width: 50%;
+    }
+  }
+
+  @include mobile {
+
+    .col-1-3 {
+      width: 100%;
+    }
+  }
+}
+
+// Floats for quotes and marginals
+.right {
+  float: right;
+
+  @include tablet {
+    float: none;
+  }
+}
+
+.left {
+  float: left;
+  text-align: right;
+
+  @include tablet {
+    float: none;
+  }
+}
+
+.center {
+  text-align: center;
+}
