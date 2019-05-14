@@ -75,11 +75,12 @@ export default function Draw(options) {
     $app.paragraph = $app.container.select('p.answer');
 
     $app.sort = $app.container.select('.content')
-      .append('ul')
+      .append('ol')
       .selectAll('li')
       .data($data.current)
       .enter()
       .append('li')
+      .append('div')
       .classed('button', true);
 
     $app.sort.append('i')
@@ -88,9 +89,7 @@ export default function Draw(options) {
     $app.sort.append('span')
       .text(d => d.key);
 
-    console.log($app.container.select('ul').node());
-
-    new Sortable($app.container.select('ul').node(), {
+    new Sortable($app.container.select('ol').node(), {
       animation: 150,
       ghostClass: 'moving'
     });

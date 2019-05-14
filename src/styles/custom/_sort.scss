@@ -1,20 +1,22 @@
 .sort {
-  ul {
+  ul, ol {
     padding: 0;
-    list-style: none;
+    list-style-position: inside;
   }
 
   .button {
-    display: block;
     width: fit-content;
     color: $black;
     background: $yellow;
+    margin-left: .5em;
 
     i {
       margin-right: .25em;
     }
+  }
 
-    &.moving {
+  .moving {
+    .button {
       color: $white;
       background: $blue;
     }
