@@ -48,7 +48,7 @@ export default function Draw(options) {
     $data.current = $data.data.values.sort((a, b) =>
       d3[$data.data.config.order](a.value, b.value)
     );
-    $data.user = [];
+    $data.user = d3.shuffle($data.current.slice());
 
     calculate();
   }
@@ -74,29 +74,53 @@ export default function Draw(options) {
 
     $app.paragraph = $app.container.select('p.answer');
 
-    $app.sort = $app.container.select('.content')
+    $app.list = $app.container.select('.content')
       .append('ol')
       .selectAll('li')
-      .data($data.current)
+      .data($data.user)
       .enter()
-      .append('li')
-      .append('div')
+      .append('li');
+
+    $app.listButton = $app.list.append('div')
       .classed('button', true);
 
-    $app.sort.append('i')
+    $app.listButton.append('i')
       .classed('icon-move', true);
 
-    $app.sort.append('span')
+    $app.listButton.append('span')
       .text(d => d.key);
 
-    new Sortable($app.container.select('ol').node(), {
+    $app.sortable = new Sortable($app.container.select('ol').node(), {
       animation: 150,
       ghostClass: 'moving'
     });
   }
 
   function handleComplete() {
+    $app.sortable.option('disabled', true);
 
+    $app.list
+      .select('i')
+      .remove();
+
+    $app.list
+      .select('.button')
+      .insert('strong', ':first-child')
+      .text((d, i) => `${i+1}. `);
+
+    $app.list
+      .append('strong')
+      .text(d => ` ${d.value} ${$data.data.config.unit}`);
+
+    $app.list
+      .sort((a, b) => {
+        return d3.descending(a.value, b.value);
+      });
+
+    $app.paragraph
+      .transition()
+      .duration(1000)
+      .style('opacity', 1);
   }
 
   function handleReset() {
