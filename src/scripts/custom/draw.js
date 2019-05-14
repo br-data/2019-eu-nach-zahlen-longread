@@ -37,7 +37,6 @@ export default function Draw(options) {
   $data = {};
 
   function init() {
-    // options.element = document.getElementById(`#${options.id}`);
     $app.id = options.id;
     $app.container = d3.select(`#${options.id}`);
     $data.data = options.data;
@@ -96,7 +95,8 @@ export default function Draw(options) {
     $app.paragraph = $app.container.select('p.answer');
 
     // Container SVG
-    $app.svg = $app.container.select('.content').append('svg')
+    $app.svg = $app.container.select('.content')
+      .append('svg')
       .attr('data-id', $app.id)
       .attr('xmlns', 'http://www.w3.org/2000/svg')
       .attr('version', '1.1')

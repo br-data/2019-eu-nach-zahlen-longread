@@ -1,0 +1,22 @@
+.sort {
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+
+  .button {
+    display: block;
+    width: fit-content;
+    color: $black;
+    background: $yellow;
+
+    i {
+      margin-right: .25em;
+    }
+
+    &.moving {
+      color: $white;
+      background: $blue;
+    }
+  }
+}

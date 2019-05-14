@@ -3,6 +3,7 @@ import '../styles/index.scss';
 import data from '../data/data.json';
 
 import Draw from './custom/draw';
+import Sort from './custom/sort';
 
 //import analytics from './modules/analytics';
 
@@ -10,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const charts = [];
 
-  const etq = new Draw({
+  const erwerbstaetigenquote = new Draw({
     id: 'erwerbstaetigenquote',
     data: data.filter(d => d.id === 'erwerbstaetigenquote')[0]
   });
-  charts.push(etq);
-  etq.init();
+  charts.push(erwerbstaetigenquote);
+  erwerbstaetigenquote.init();
 
   const wald = new Draw({
     id: 'wald',
@@ -30,6 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   charts.push(populisten);
   populisten.init();
+
+  const jugendarbeitslosigkeit = new Sort({
+    id: 'jugendarbeitslosigkeit',
+    data: data.filter(d => d.id === 'jugendarbeitslosigkeit')[0]
+  });
+  charts.push(jugendarbeitslosigkeit);
+  jugendarbeitslosigkeit.init();
 
   // analytics({
   //   serviceUrl: 'https://ddj.br.de/analytics/track',
