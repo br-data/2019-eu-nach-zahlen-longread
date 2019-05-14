@@ -109,14 +109,18 @@
     "id": "treibhaus",
     "type": "sort",
     "config": {
-      "unit": "in Tausend Tonnen",
+      "unit": "in Millionen Tonnen",
       "order": "descending"
     },
     "values": [
-      { "key": "Energie", "value": 3352172.89 },
-      { "key": "Industrielle Prozesse und Produktverwendung", "value": 374482.74 },
-      { "key": "Landwirtschaft", "value": 430001.72 },
-      { "key": "Abfall- und Abwasserbehandlung", "value": 138496.47 }
+      { "key": "Energie", "value": 1280 },
+      { "key": "Industrie", "value": 849 },
+      { "key": "Transport", "value": 931 },
+      { "key": "Wohn- und Geschäftshäuser", "value": 575 },
+      { "key": "Landwirtschaft", "value": 511 },
+      { "key": "Abfall", "value": 138 },
+      { "key": "Luft- und Schiffahrt", "value": 295 }
+      { "key": "Kohlendioxid aus Biomasse", "value": 557 }
     ]
   },
   {
@@ -156,6 +160,24 @@
       { "key": "Deutschland", "value": 6, "correct": false },
       { "key": "Spanien", "value": 5, "correct": false },
       { "key": "Frankreich", "value": 5, "correct": false }
+    ]
+  },
+  {
+    "id": "spitzensteuer",
+    "type": "sort",
+    "config": {
+      "unit": "%",
+      "order": "descending"
+    },
+    "values": [
+      { "key": "Bulgarien", "value": 10 },
+      { "key": "Tschechien", "value": 22 },
+      { "key": "Norwegen", "value": 38.52 },
+      { "key": "Spanien", "value": 45 },
+      { "key": "Deutschland", "value": 47.48 },
+      { "key": "Frankreich", "value": 54.61 },
+      { "key": "Österreich", "value": 55 }
+      { "key": "Schweden", "value": 57.12 }
     ]
   },
 
