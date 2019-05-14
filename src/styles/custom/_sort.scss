@@ -4,8 +4,11 @@
     list-style-position: inside;
   }
 
-  .button {
+  li {
     width: fit-content;
+  }
+
+  .button {
     color: $black;
     background: $yellow;
     margin-left: .5em;
