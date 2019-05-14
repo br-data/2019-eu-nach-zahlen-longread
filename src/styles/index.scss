@@ -1,16 +1,16 @@
 @import url(https://web.br.de/interaktiv/assets/fonts/open-sans/open-sans-v13-light.css);
-@import url(https://web.br.de/interaktiv/assets/fonts/icons/icons-all.css);
+// @import url(https://web.br.de/interaktiv/assets/fonts/icons/icons-all.css);
 
 @import 'layout/reset';         // CSS reset
 
 @import 'layout/devices';       // Mediaqueries
 @import 'layout/colors';        // Color variables
-//@import 'layout/icons';       // Icon font
+@import 'layout/icons';         // Icon font
 @import 'layout/typo';          // General typography
 @import 'layout/grid';          // Grid layout
 @import 'layout/global';        // Global settings
 
-@import 'modules/button';      // Infoboxes
+@import 'modules/button';       // Button
 @import 'modules/infobox';      // Infoboxes
 @import 'modules/related';      // Related articles
 @import 'modules/sharing';      // Sharing buttons
@@ -18,4 +18,5 @@
 @import 'modules/navigation';   // Navigation header
 @import 'modules/footer';       // Footer
 
-@import 'custom/draw';          // Draw-it quiz
+@import 'custom/draw';          // Draw the line
+//@import 'custom/sort';          // Sortable
