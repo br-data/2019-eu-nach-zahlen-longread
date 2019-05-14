@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-const Draw = options => {
+export default function Draw(options) {
   let $config;
   let $app;
   let $state;
@@ -176,11 +176,11 @@ const Draw = options => {
       .on('click', handleDrag)
       .call($app.drag);
 
-    render();
+    resize();
   }
 
   // Assign values (width, height, color) to the SVG elements
-  function render() {
+  function resize() {
 
     // Set mobile view depending on screen width
     $state.mobile = window.innerWidth < $config.breakpoint;
@@ -249,10 +249,10 @@ const Draw = options => {
       .style('opacity', $state.started ? 1 : 0); // Hide initially
 
     $app.user.group.highlight.pulse
-      .attr('r', 4);
+      .attr('r', 5);
 
     $app.user.group.highlight.circle
-      .attr('r', 4);
+      .attr('r', 5);
 
     $app.user.group.highlight.label
       .attr('dy', '-15')
@@ -264,7 +264,7 @@ const Draw = options => {
     $app.current.group.line.path.attr('d', $app.lineConstructor($data.current));
 
     $app.current.group.line.dots
-      .attr('r', 4)
+      .attr('r', 5)
       .attr('cx', key)
       .attr('cy', value);
 
@@ -282,7 +282,7 @@ const Draw = options => {
       .attr('d', $app.lineConstructor($data.previous));
 
     $app.previous.group.dots
-      .attr('r', 4)
+      .attr('r', 5)
       .attr('cx', key)
       .attr('cy', value);
 
@@ -290,7 +290,7 @@ const Draw = options => {
       .attr('transform', translate($data.previous));
 
     $app.previous.group.highlight.pulse
-      .attr('r', 4)
+      .attr('r', 5)
       .classed('pulse', !$state.started && !$state.completed); // Hide initially
 
     $app.previous.group.label
@@ -463,7 +463,7 @@ const Draw = options => {
       return d;
     });
 
-    render();
+    resize();
   }
 
   // Handle mobile touch gesture (allow, disallow scrolling)
@@ -574,10 +574,6 @@ const Draw = options => {
   // Public functions
   return {
     init,
-    render,
-    update,
-    reset: handleReset
+    resize
   };
-};
-
-export default Draw;
+}

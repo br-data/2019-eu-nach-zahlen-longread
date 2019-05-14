@@ -8,22 +8,27 @@ import Draw from './custom/draw';
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const charts = [];
+
   const etq = new Draw({
     id: 'erwerbstaetigenquote',
     data: data.filter(d => d.id === 'erwerbstaetigenquote')[0]
   });
+  charts.push(etq);
   etq.init();
 
   const wald = new Draw({
     id: 'wald',
     data: data.filter(d => d.id === 'wald')[0]
   });
+  charts.push(wald);
   wald.init();
 
   const populisten = new Draw({
     id: 'populisten',
     data: data.filter(d => d.id === 'populisten')[0]
   });
+  charts.push(populisten);
   populisten.init();
 
   // analytics({
@@ -37,17 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
   //   },
   //   respectDNT: true
   // });
+
+  resize(charts);
 });
 
-// function resize() {
-//   let timeout;
+function resize(charts) {
+  let timeout;
 
-//   window.onresize = () => {
-//     clearTimeout(timeout);
-//     timeout = setTimeout(() => {
-//       charts.forEach((chart) => {
-//         chart.update();
-//       });
-//     }, 200);
-//   };
-// }
+  window.onresize = () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      charts.forEach((chart) => {
+        chart.resize();
+      });
+    }, 200);
+  };
+}
