@@ -4,6 +4,7 @@ import data from '../data/data.json';
 
 import Draw from './custom/draw';
 import Sort from './custom/sort';
+import Quiz from './custom/quiz';
 
 //import analytics from './modules/analytics';
 
@@ -17,13 +18,6 @@ window.addEventListener('load', () => {
   });
   charts.push(erwerbstaetigenquote);
   erwerbstaetigenquote.init();
-
-  const wald = new Draw({
-    id: 'wald',
-    data: data.filter(d => d.id === 'wald')[0]
-  });
-  charts.push(wald);
-  wald.init();
 
   const populisten = new Draw({
     id: 'populisten',
@@ -53,6 +47,27 @@ window.addEventListener('load', () => {
   charts.push(treibhaus);
   treibhaus.init();
 
+  const auslaenderanteil = new Quiz({
+    id: 'auslaenderanteil',
+    data: data.filter(d => d.id === 'auslaenderanteil')[0]
+  });
+  charts.push(auslaenderanteil);
+  auslaenderanteil.init();
+
+  const age = new Quiz({
+    id: 'age',
+    data: data.filter(d => d.id === 'age')[0]
+  });
+  charts.push(age);
+  age.init();
+
+  const vegetarier = new Quiz({
+    id: 'vegetarier',
+    data: data.filter(d => d.id === 'vegetarier')[0]
+  });
+  charts.push(vegetarier);
+  vegetarier.init();
+
   const spitzensteuer = new Sort({
     id: 'spitzensteuer',
     data: data.filter(d => d.id === 'spitzensteuer')[0]
@@ -66,6 +81,13 @@ window.addEventListener('load', () => {
   });
   charts.push(asyl);
   asyl.init();
+
+  const teilzeit = new Sort({
+    id: 'teilzeit',
+    data: data.filter(d => d.id === 'teilzeit')[0]
+  });
+  charts.push(teilzeit);
+  teilzeit.init();
 
   // analytics({
   //   serviceUrl: 'https://ddj.br.de/analytics/track',

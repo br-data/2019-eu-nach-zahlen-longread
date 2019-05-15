@@ -1,0 +1,29 @@
+.quiz {
+
+  .content {
+    margin-bottom: 1.5em;
+  }
+
+  .button {
+    color: $black;
+    background: $yellow;
+    text-align: center;
+    width: 45%;
+    margin: 0 .5em .5em 0;
+
+    &:hover {
+      color: $white;
+      background: $blue;
+    }
+
+    &.correct {
+      font-weight: bold;
+      background: #a6e207;
+    }
+
+    &.wrong {
+      color: $white;
+      background: #e24307;
+    }
+  }
+}
