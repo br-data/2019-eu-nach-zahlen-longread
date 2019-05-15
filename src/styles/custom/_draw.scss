@@ -41,8 +41,9 @@
     }
   }
 
-  .previous, .current, .user, .hint, .annotations {
+  .previous, .current, .user, .hint {
     text {
+      font-weight: bold;
       stroke: $white;
       stroke-width: 5;
       paint-order: stroke;
@@ -57,10 +58,8 @@
     }
 
     text {
-      font-size: 17px;
-      font-weight: bold;
       fill: $black;
-      stroke: none;
+      font-weight: normal;
     }
   }
 
