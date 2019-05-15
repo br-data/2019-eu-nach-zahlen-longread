@@ -14,9 +14,9 @@ Um die Module installieren und die Entwicklerwerkzeuge nutzen zu können, muss v
 ## Daten
 
 ## Anpassen
-Neue Fragen können in `scr/index.html` hinzugefügt werden. Die Daten und Einstellungen zur Frage müssen in der Datei `src/data/data.json` ergänzt werden. Die Frage wird mit den Daten über das Attribut `id`, beziehungsweise `data-id` verknüpft.
+Neue Fragen können in `scr/index.html` hinzugefügt werden. Die Daten und Einstellungen zur Frage müssen in der Datei `src/data/data.json` ergänzt werden. Die Frage wird mit den Daten über das Attribut `id` verknüpft.
 
-Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit der `data-id="trust"` hinzugefügt.
+Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit der `id="trust"` hinzugefügt.
 
 ```html
 <div class="block" data-id="trust">
@@ -52,3 +52,9 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - `sort`: Einträge auf- oder absteigend nach einem bestimmten Indikator sortieren
 - `quiz`: eine Auswahl an Fragen, von denen eine richtig ist
 - `guess`: einen Wert schätzen
+
+## To Do
+- Drawable: Labels immer im Vordergrund zeichnen
+- Drawable: `$config` und `$data.data.config` mergen
+- Sortable: Auflösung animieren
+- Sortable: Anzeigen welche Positionen richtig geschätzt wurden

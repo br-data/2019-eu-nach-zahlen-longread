@@ -60,6 +60,13 @@ window.addEventListener('load', () => {
   charts.push(spitzensteuer);
   spitzensteuer.init();
 
+  const asyl = new Draw({
+    id: 'asyl',
+    data: data.filter(d => d.id === 'asyl')[0]
+  });
+  charts.push(asyl);
+  asyl.init();
+
   // analytics({
   //   serviceUrl: 'https://ddj.br.de/analytics/track',
   //   projectId: 'pestizide',

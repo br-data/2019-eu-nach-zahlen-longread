@@ -2,17 +2,9 @@ import * as d3 from 'd3';
 import * as Sortable from 'sortablejs';
 
 export default function Draw(options) {
-  let $config;
   let $app;
   let $state;
-  let $pointer;
   let $data;
-
-  $config = {
-    height: 270,
-    width: 658,
-    breakpoint: 561
-  };
 
   // Store for SVG elements and calculations
   $app = {
@@ -74,9 +66,14 @@ export default function Draw(options) {
 
     $app.paragraph = $app.container.select('p.answer');
 
-    $app.list = $app.container.select('.content')
-      .append('ol')
-      .selectAll('li')
+    render();
+  }
+
+  function render() {
+    $app.listParent = $app.container.select('.content')
+      .append('ol');
+
+    $app.list = $app.listParent.selectAll('li')
       .data($data.user)
       .enter()
       .append('li');
@@ -94,37 +91,49 @@ export default function Draw(options) {
       animation: 150,
       ghostClass: 'moving'
     });
+
+    $state.started = true;
   }
 
   function handleComplete() {
-    $app.sortable.option('disabled', true);
 
-    $app.list
-      .select('i')
-      .remove();
+    if(!$state.completed) {
+      $app.sortable.option('disabled', true);
 
-    $app.list
-      .select('.button')
-      .insert('strong', ':first-child')
-      .text((d, i) => `${i+1}. `);
+      $app.list
+        .select('i')
+        .remove();
 
-    $app.list
-      .append('strong')
-      .text(d => ` ${d.value} ${$data.data.config.unit}`);
+      $app.list
+        .select('.button')
+        .insert('strong', ':first-child')
+        .text((d, i) => `${i+1}. `);
 
-    $app.list
-      .sort((a, b) => {
-        return d3.descending(a.value, b.value);
-      });
+      $app.list
+        .append('strong')
+        .text(d => ` ${d.value} ${$data.data.config.unit}`);
 
-    $app.paragraph
-      .transition()
-      .duration(1000)
-      .style('opacity', 1);
+      $app.list
+        .sort((a, b) => {
+          return d3.descending(a.value, b.value);
+        });
+
+      $app.paragraph
+        .transition()
+        .duration(1000)
+        .style('opacity', 1);
+
+      $state.completed = true;
+    }
   }
 
   function handleReset() {
 
+    $app.listParent.remove();
+    render();
+
+    $state.started = false;
+    $state.completed = false;
   }
 
   function resize() {
