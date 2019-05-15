@@ -35,6 +35,17 @@
     ]
   },
   {
+    "id": "trust",
+    "type": "guess",
+    "config": {
+      "unit": "%",
+      "range": [0, 100]
+    },
+    "values": [
+      { "key": 48 }
+    ]
+  },
+  {
     "id": "age",
     "type": "quiz",
     "config": {
@@ -45,32 +56,6 @@
       { "key": "Italien", "value": 45.9, "correct": true },
       { "key": "Deutschland", "value": 45.9, "correct": false },
       { "key": "Spanien", "value": 43.2, "correct": false }
-    ]
-  },
-  {
-    "id": "erwerbstaetigenquote",
-    "type": "draw",
-    "config": {
-      "unit": "%",
-      "max": 80,
-      "breakpoint": 2005
-    },
-    "values": [
-      { "key": 2004, "value": 55.4 },
-      { "key": 2005, "value": 56.0 },
-      { "key": 2006, "value": 57.0 },
-      { "key": 2007, "value": 58.1 },
-      { "key": 2008, "value": 58.8 },
-      { "key": 2009, "value": 58.3 },
-      { "key": 2010, "value": 58.2 },
-      { "key": 2011, "value": 58.4 },
-      { "key": 2012, "value": 58.6 },
-      { "key": 2013, "value": 58.8 },
-      { "key": 2014, "value": 59.6 },
-      { "key": 2015, "value": 60.4 },
-      { "key": 2016, "value": 61.4 },
-      { "key": 2017, "value": 62.4 },
-      { "key": 2018, "value": 63.3 }
     ]
   },
   {
@@ -91,17 +76,6 @@
     ]
   },
   {
-    "id": "trust",
-    "type": "guess",
-    "config": {
-      "unit": "%",
-      "range": [0, 100]
-    },
-    "values": [
-      { "key": 48 }
-    ]
-  },
-  {
     "id": "treibhaus",
     "type": "sort",
     "config": {
@@ -115,7 +89,7 @@
       { "key": "Wohn- und Geschäftshäuser", "value": 575 },
       { "key": "Landwirtschaft", "value": 511 },
       { "key": "Abfall", "value": 138 },
-      { "key": "Luft- und Schiffahrt", "value": 295 },
+      { "key": "Luft- und Schifffahrt", "value": 295 },
       { "key": "Kohlendioxid aus Biomasse", "value": 557 }
     ]
   },
@@ -133,23 +107,6 @@
     ]
   },
   {
-    "id": "spitzensteuer",
-    "type": "sort",
-    "config": {
-      "unit": "%",
-      "order": "descending"
-    },
-    "values": [
-      { "key": "Bulgarien", "value": 10 },
-      { "key": "Tschechien", "value": 22 },
-      { "key": "Norwegen", "value": 38.52 },
-      { "key": "Spanien", "value": 45 },
-      { "key": "Deutschland", "value": 47.48 },
-      { "key": "Frankreich", "value": 54.61 },
-      { "key": "Schweden", "value": 57.12 }
-    ]
-  },
-  {
     "id": "vegetarier",
     "type": "quiz",
     "config": {
@@ -160,21 +117,6 @@
       { "key": "Deutschland", "value": 6, "correct": false },
       { "key": "Spanien", "value": 5, "correct": false },
       { "key": "Frankreich", "value": 5, "correct": false }
-    ]
-  },
-  {
-    "id": "teilzeit",
-    "type": "sort",
-    "config": {
-      "unit": "%",
-      "order": "descending"
-    },
-    "values": [
-      { "key": "Niederlande", "value": 75.6 },
-      { "key": "Deutschland", "value": 46.3},
-      { "key": "Frankreich", "value": 28.8 },
-      { "key": "Polen", "value": 9.7 },
-      { "key": "Schweden", "value": 33.3 }
     ]
   },
   {
@@ -192,11 +134,30 @@
       { "key": 2011, "value": 309040 },
       { "key": 2012, "value": 335290 },
       { "key": 2013, "value": 431095 },
-      { "key": 2014, "value": 626960  },
+      { "key": 2014, "value": 626960 },
       { "key": 2015, "value": 1322845 },
       { "key": 2016, "value": 1260910 },
       { "key": 2017, "value": 712235 },
       { "key": 2018, "value": 645725 }
+    ]
+  },
+  {
+    "id": "frauenanteil",
+    "type": "draw",
+    "config": {
+      "unit": "%",
+      "max": 100,
+      "breakpoint": 1984
+    },
+    "values": [
+      { "key": 1979, "value": 15.2 },
+      { "key": 1984, "value": 15.7 },
+      { "key": 1989, "value": 19.9 },
+      { "key": 1994, "value": 27.4 },
+      { "key": 1999, "value": 27.5 },
+      { "key": 2004, "value": 29.9 },
+      { "key": 2009, "value": 35.5 },
+      { "key": 2014, "value": 36.4 }
     ]
   }
 ]
