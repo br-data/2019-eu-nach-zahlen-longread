@@ -39,7 +39,8 @@
     "type": "guess",
     "config": {
       "unit": "%",
-      "range": [0, 100]
+      "range": [0, 100],
+      "initial": 20
     },
     "values": [
       { "key": 48 }

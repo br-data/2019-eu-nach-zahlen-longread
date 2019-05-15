@@ -47,50 +47,48 @@ export default function Guess(options) {
   function render() {
     $app.guess = $app.container.select('.content');
 
+    $app.scale.range([16, $app.guess.node().getBoundingClientRect().width - 16]);
+
+    $app.value = $app.guess.append('div')
+      .classed('value', true)
+      .style('left',
+        `${$app.scale($data.data.config.initial)}px`);
+
+    $app.valueText = $app.value.append('span')
+      .text($data.data.config.initial);
+
+    $app.value.append('div')
+      .classed('droplet', true);
+
     $app.input = $app.guess.append('input')
       .attr('type', 'range')
-      .attr('value', $data.data.config.range[0])
+      .attr('steps', 1)
+      .attr('value', 20)
       .attr('min', $data.data.config.range[0])
       .attr('max', $data.data.config.range[1])
-      .attr('list', `ticks-${$data.data.id}`);
+      .on('input', handleInput);
 
-    $app.tickmarks = $app.guess.append('datalist')
-      .attr('id', `ticks-${$data.data.id}`)
-      .selectAll('option')
-      .data($app.scale.ticks(10))
+    $app.tickmarks = $app.guess.append('div')
+      .classed('ticks', true)
+      .selectAll('div')
+      .data($app.scale.ticks(5))
       .enter()
-      .append('option')
-      .attr('value', d => d)
-      .attr('label', (d, i, p) => {
-        console.log(d, i, p.length);
-
-        if (i === 0 || i+1 === p.length) {
-          return d;
-        }
-      });
-
-  // <input type="range" list="tickmarks">
-
-  // <datalist id="tickmarks">
-  //   <option value="0" label="0%">
-  //   <option value="10">
-  //   <option value="20">
-  //   <option value="30">
-  //   <option value="40">
-  //   <option value="50" label="50%">
-  //   <option value="60">
-  //   <option value="70">
-  //   <option value="80">
-  //   <option value="90">
-  //   <option value="100" label="100%">
-  // </datalist>
+      .append('div')
+      .text(d => pretty(d));
 
     $state.started = true;
   }
 
-  function handleComplete(event) {
-    if (!$state.completed) {
+  function handleInput() {
+    const value = $app.input.property('value');
+    const offsetX = $app.scale(value);
 
+    $app.value.style('left', `${offsetX}px`);
+    $app.valueText.text(value);
+  }
+
+  function handleComplete() {
+    if (!$state.completed) {
       $app.paragraph
         .transition()
         .duration(1000)
@@ -101,7 +99,6 @@ export default function Guess(options) {
   }
 
   function handleReset() {
-
     $app.answers.remove();
     render();
 
@@ -110,7 +107,7 @@ export default function Guess(options) {
   }
 
   function resize() {
-
+    $app.scale.range([16, $app.guess.node().getBoundingClientRect().width - 16]);
   }
 
   function pretty(number) {

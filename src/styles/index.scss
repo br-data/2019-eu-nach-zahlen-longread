@@ -3,14 +3,15 @@
 
 @import 'layout/reset';         // CSS reset
 
-@import 'layout/devices';       // Mediaqueries
+@import 'layout/devices';       // Media queries
 @import 'layout/colors';        // Color variables
 @import 'layout/icons';         // Icon font
 @import 'layout/typo';          // General typography
 @import 'layout/grid';          // Grid layout
 @import 'layout/global';        // Global settings
 
-@import 'modules/button';       // Button
+@import 'modules/input';        // Input element
+@import 'modules/button';       // Button element
 @import 'modules/infobox';      // Infoboxes
 @import 'modules/related';      // Related articles
 @import 'modules/sharing';      // Sharing buttons
@@ -19,6 +20,6 @@
 @import 'modules/footer';       // Footer
 
 @import 'custom/draw';          // Draw the line
-@import 'custom/sort';          // Sortable
-@import 'custom/quiz';          // Quiz
-@import 'custom/guess';         // Guess
+@import 'custom/sort';          // Sortable list
+@import 'custom/quiz';          // Simple Quiz
+@import 'custom/guess';         // Guess a number

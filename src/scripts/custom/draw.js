@@ -46,11 +46,8 @@ export default function Draw(options) {
 
   // Transform and filter the data for the current dataset
   function transform() {
-    // All data from the previous incumbet (Schröder)
     $data.previous = $data.data.values.filter(d => d.key <= $data.data.config.breakpoint);
-    // All data from the current incumbet (Merkel)
     $data.current = $data.data.values.filter(d => d.key >= $data.data.config.breakpoint);
-    // Placeholder for the user data
     $data.user = clone($data.current).map((d, i) => {
       // Only set the value for the first data point
       d.value = i ? undefined : d.value;

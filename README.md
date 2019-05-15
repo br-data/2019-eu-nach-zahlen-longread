@@ -37,7 +37,9 @@ In der JSON-Datei muss dazu ein neues Objekt, in diesem Fall mit der `"id": "tru
   "id": "trust",
   "type": "guess",
   "config": {
-    "unit": "%"
+    "unit": "%",
+    "range": [0, 100],
+    "initial": 20
   },
   "values": [
     { "key":  50 }
@@ -60,3 +62,4 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - Sortable: Anzeigen welche Positionen richtig geschätzt wurden
 - Sortable: Index des Elements ausgeben, statt der Daten (Bug)
 - Funktion `pretty()` modularisieren
+- Programmatische Initialisierung
