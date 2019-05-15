@@ -7,7 +7,7 @@ import Sort from './custom/sort';
 
 //import analytics from './modules/analytics';
 
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
 
   const charts = [];
 
@@ -38,6 +38,34 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   charts.push(jugendarbeitslosigkeit);
   jugendarbeitslosigkeit.init();
+
+  const prios = new Sort({
+    id: 'prios',
+    data: data.filter(d => d.id === 'prios')[0]
+  });
+  charts.push(prios);
+  prios.init();
+
+  const treibhaus = new Sort({
+    id: 'treibhaus',
+    data: data.filter(d => d.id === 'treibhaus')[0]
+  });
+  charts.push(treibhaus);
+  treibhaus.init();
+
+  const spitzensteuer = new Sort({
+    id: 'spitzensteuer',
+    data: data.filter(d => d.id === 'spitzensteuer')[0]
+  });
+  charts.push(spitzensteuer);
+  spitzensteuer.init();
+
+  const asyl = new Draw({
+    id: 'asyl',
+    data: data.filter(d => d.id === 'asyl')[0]
+  });
+  charts.push(asyl);
+  asyl.init();
 
   // analytics({
   //   serviceUrl: 'https://ddj.br.de/analytics/track',
