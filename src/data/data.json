@@ -87,8 +87,6 @@
       { "key": "Frankreich", "value": 20.2 },
       { "key": "Schweden", "value": 17.7 },
       { "key": "Bulgarien", "value": 13.4 },
-      { "key": "Dänemark", "value": 9.7 },
-      { "key": "Tschechien", "value": 6.3 },
       { "key": "Deutschland", "value": 5.6 }
     ]
   },
@@ -147,7 +145,6 @@
       { "key": "Spanien", "value": 45 },
       { "key": "Deutschland", "value": 47.48 },
       { "key": "Frankreich", "value": 54.61 },
-      { "key": "Österreich", "value": 55 },
       { "key": "Schweden", "value": 57.12 }
     ]
   },
