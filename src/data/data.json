@@ -276,6 +276,21 @@
 =======
   },
   {
+    "id": "teilzeit",
+    "type": "sort",
+    "config": {
+      "unit": "%",
+      "order": "descending"
+    },
+    "values": [
+      { "key": "Niederlande", "value": 75.6 },
+      { "key": "Deutschland", "value": 46.3},
+      { "key": "Frankreich", "value": 28.8 },
+      { "key": "Polen", "value": 9.7 },
+      { "key": "Schweden", "value": 33.3 }
+    ]
+  },
+  {
     "id": "asyl",
     "type": "draw",
     "config": {
