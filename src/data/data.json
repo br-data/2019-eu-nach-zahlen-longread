@@ -249,4 +249,26 @@
       { "key": 48 }
     ]
   }
+  {
+    "id": "asyl",
+    "type": "draw",
+    "config": {
+      "unit": "Personen",
+      "max": 1400000,
+      "breakpoint": 2009
+    },
+    "values": [
+      { "key": 2008, "value": 225150 },
+      { "key": 2009, "value": 263835 },
+      { "key": 2010, "value": 259630 },
+      { "key": 2011, "value": 309040 },
+      { "key": 2012, "value": 335290 },
+      { "key": 2013, "value": 431095 },
+      { "key": 2014, "value": 626960  },
+      { "key": 2015, "value": 1322845 },
+      { "key": 2016, "value": 1260910 },
+      { "key": 2017, "value": 712235 },
+      { "key": 2018, "value": 645725 }
+    ]
+  }
 ]
