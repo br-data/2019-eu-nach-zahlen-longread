@@ -1,4 +1,5 @@
 .sort {
+
   ul, ol {
     padding: 0;
     list-style-position: inside;
@@ -6,6 +7,10 @@
 
   li {
     width: fit-content;
+  }
+
+  .content {
+    margin-bottom: 1.5em;
   }
 
   .button {

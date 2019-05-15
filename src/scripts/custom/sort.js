@@ -2,30 +2,9 @@ import * as d3 from 'd3';
 import * as Sortable from 'sortablejs';
 
 export default function Draw(options) {
-  let $app;
-  let $state;
-  let $data;
-
-  // Store for SVG elements and calculations
-  $app = {
-    previous: {},
-    current: {},
-    user: {},
-    labels: {},
-    coalitions: {},
-    hint: {},
-    xAxis: {},
-    yAxis: {}
-  };
-
-  $state = {
-    started: false,
-    completed: false,
-    evaluated: false,
-    mobile: false
-  };
-
-  $data = {};
+  let $app = {};
+  let $state = {};
+  let $data = {};
 
   function init() {
     $app.id = options.id;
@@ -97,7 +76,7 @@ export default function Draw(options) {
 
   function handleComplete() {
 
-    if(!$state.completed) {
+    if (!$state.completed) {
       $app.sortable.option('disabled', true);
 
       $app.list
