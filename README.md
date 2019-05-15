@@ -58,3 +58,4 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - Drawable: `$config` und `$data.data.config` mergen
 - Sortable: Auflösung animieren
 - Sortable: Anzeigen welche Positionen richtig geschätzt wurden
+- Funktion `pretty()` modularisieren

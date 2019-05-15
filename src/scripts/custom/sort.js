@@ -90,7 +90,7 @@ export default function Draw(options) {
 
       $app.list
         .append('strong')
-        .text(d => ` ${d.value} ${$data.data.config.unit}`);
+        .text(d => ' ' + pretty(d.value));
 
       $app.list
         .sort((a, b) => {
@@ -117,6 +117,13 @@ export default function Draw(options) {
 
   function resize() {
 
+  }
+
+  function pretty(number) {
+    let string = Math.round(number).toString().split('.');
+    string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
+
+    return `${string} ${$data.data.config.unit}`;
   }
 
   // Public functions

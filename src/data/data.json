@@ -38,7 +38,7 @@
     "id": "age",
     "type": "quiz",
     "config": {
-      "unit": "Boolean"
+      "unit": "Jahre"
     },
     "values": [
       { "key": "Irland", "value": 36.9, "correct": false },
@@ -104,7 +104,7 @@
     "id": "treibhaus",
     "type": "sort",
     "config": {
-      "unit": "in Millionen Tonnen",
+      "unit": "Mio. Tonnen",
       "order": "descending"
     },
     "values": [
@@ -117,12 +117,12 @@
       { "key": "Luft- und Schiffahrt", "value": 295 },
       { "key": "Kohlendioxid aus Biomasse", "value": 557 }
     ]
-  }, 
+  },
   {
     "id": "auslaenderanteil",
     "type": "quiz",
     "config": {
-      "unit": "Boolean"
+      "unit": "%"
     },
     "values": [
       { "key": "Luxemburg", "value": 47.84, "correct": true },
@@ -152,7 +152,7 @@
     "id": "vegetarier",
     "type": "quiz",
     "config": {
-      "unit": "Boolean"
+      "unit": "%"
     },
     "values": [
       { "key": "Vereintes Königreich", "value": 10, "correct": true },
@@ -180,7 +180,7 @@
     "id": "asyl",
     "type": "draw",
     "config": {
-      "unit": "Personen",
+      "unit": "",
       "max": 1400000,
       "breakpoint": 2009
     },
