@@ -1,5 +1,53 @@
 [
   {
+    "id": "populisten",
+    "type": "draw",
+    "config": {
+      "unit": "%",
+      "max": 25,
+      "breakpoint": 1984
+    },
+    "values": [
+      { "key": 1979, "value": 0.0 },
+      { "key": 1984, "value": 2.2 },
+      { "key": 1989, "value": 2.5 },
+      { "key": 1994, "value": 3.5 },
+      { "key": 1999, "value": 4.2 },
+      { "key": 2004, "value": 8.5 },
+      { "key": 2009, "value": 11.5 },
+      { "key": 2014, "value": 21.7 },
+      { "key": 2019, "value": 15.5 }
+    ]
+  },
+  {
+    "id": "prios",
+    "type": "sort",
+    "config": {
+      "unit": "%",
+      "order": "descending"
+    },
+    "values": [
+      { "key": "Klimawandel aufhalten", "value": 21 },
+      { "key": "Terrorismus bekämpfen", "value": 17 },
+      { "key": "Frieden sichern", "value": 17 },
+      { "key": "Migration managen", "value": 13 },
+      { "key": "Bürgerrechte schützen", "value": 12 }
+    ]
+  },
+  {
+    "id": "age",
+    "type": "quiz",
+    "config": {
+      "unit": "Boolean"
+    },
+    "values": [
+      { "key": "Irland", "value": 36.9, "correct": false },
+      { "key": "Italien", "value": 45.9, "correct": true },
+      { "key": "Deutschland", "value": 45.9, "correct": false },
+      { "key": "Spanien", "value": 43.2, "correct": false }
+    ]
+  },
+  {
     "id": "erwerbstaetigenquote",
     "type": "draw",
     "config": {
@@ -26,42 +74,6 @@
     ]
   },
   {
-    "id": "wald",
-    "type": "draw",
-    "config": {
-      "unit": "in Tausend Hektar",
-      "max": 250.000,
-      "breakpoint": 2000
-    },
-    "values": [
-      { "key": 1990, "value": 147.956 },
-      { "key": 2000, "value": 154.740 },
-      { "key": 2005, "value": 156.758 },
-      { "key": 2010, "value": 159.236 },
-      { "key": 2015, "value": 160.931 }
-    ]
-  },
-  {
-    "id": "populisten",
-    "type": "draw",
-    "config": {
-      "unit": "%",
-      "max": 25,
-      "breakpoint": 1984
-    },
-    "values": [
-      { "key": 1979, "value": 0.0 },
-      { "key": 1984, "value": 2.2 },
-      { "key": 1989, "value": 2.5 },
-      { "key": 1994, "value": 3.5 },
-      { "key": 1999, "value": 4.2 },
-      { "key": 2004, "value": 8.5 },
-      { "key": 2009, "value": 11.5 },
-      { "key": 2014, "value": 21.7 },
-      { "key": 2019, "value": 15.5 }
-    ]
-  },
-  {
     "id": "jugendarbeitslosigkeit",
     "type": "sort",
     "config": {
@@ -78,21 +90,6 @@
       { "key": "Dänemark", "value": 9.7 },
       { "key": "Tschechien", "value": 6.3 },
       { "key": "Deutschland", "value": 5.6 }
-    ]
-  },
-  {
-    "id": "prios",
-    "type": "sort",
-    "config": {
-      "unit": "%",
-      "order": "descending"
-    },
-    "values": [
-      { "key": "Klimawandel aufhalten", "value": 21 },
-      { "key": "Terrorismus bekämpfen", "value": 17 },
-      { "key": "Frieden sichern", "value": 17 },
-      { "key": "Migration managen", "value": 13 },
-      { "key": "Bürgerrechte schützen", "value": 12 }
     ]
   },
   {
@@ -122,20 +119,7 @@
       { "key": "Luft- und Schiffahrt", "value": 295 },
       { "key": "Kohlendioxid aus Biomasse", "value": 557 }
     ]
-  },
-  {
-    "id": "age",
-    "type": "quiz",
-    "config": {
-      "unit": "Boolean"
-    },
-    "values": [
-      { "key": "Irland", "value": 36.9, "correct": false },
-      { "key": "Italien", "value": 45.9, "correct": true },
-      { "key": "Deutschland", "value": 45.9, "correct": false },
-      { "key": "Spanien", "value": 43.2, "correct": false }
-    ]
-  },
+  }, 
   {
     "id": "auslaenderanteil",
     "type": "quiz",
@@ -147,19 +131,6 @@
       { "key": "Schweden", "value": 8.75, "correct": false },
       { "key": "Deutschland", "value": 11.69, "correct": false },
       { "key": "Litauen", "value": 0.97, "correct": false }
-    ]
-  },
-  {
-    "id": "vegetarier",
-    "type": "quiz",
-    "config": {
-      "unit": "Boolean"
-    },
-    "values": [
-      { "key": "Vereintes Königreich", "value": 10, "correct": true },
-      { "key": "Deutschland", "value": 6, "correct": false },
-      { "key": "Spanien", "value": 5, "correct": false },
-      { "key": "Frankreich", "value": 5, "correct": false }
     ]
   },
   {
@@ -180,100 +151,18 @@
       { "key": "Schweden", "value": 57.12 }
     ]
   },
-<<<<<<< HEAD
   {
-    "id": "asyl",
-    "type": "draw",
-    "config": {
-      "unit": "Personen",
-      "max": 1400000,
-      "breakpoint": 2009
-    },
-    "values": [
-      { "key": 2008, "value": 225150 },
-      { "key": 2009, "value": 263835 },
-      { "key": 2010, "value": 259630 },
-      { "key": 2011, "value": 309040 },
-      { "key": 2012, "value": 335290 },
-      { "key": 2013, "value": 431095 },
-      { "key": 2014, "value": 626960  },
-      { "key": 2015, "value": 1322845 },
-      { "key": 2016, "value": 1260910 },
-      { "key": 2017, "value": 712235 },
-      { "key": 2018, "value": 645725 }
-    ]
-  },
-
-
-
-
-=======
->>>>>>> c7de71d7a2e26470b285baab8c1d5f5047211449
-  {
-    "id": "arbeitslosenquote",
-    "type": "draw",
-    "config": {
-      "unit": "%",
-      "max": 20,
-      "breakpoint": 2005
-    },
-    "values": [
-      { "key": 2002, "value": 9.8 },
-      { "key": 2003, "value": 10.5 },
-      { "key": 2004, "value": 10.5 },
-      { "key": 2005, "value": 11.7 },
-      { "key": 2006, "value": 10.8 },
-      { "key": 2007, "value": 9.0 },
-      { "key": 2008, "value": 7.8 },
-      { "key": 2009, "value": 8.1 },
-      { "key": 2010, "value": 7.7 },
-      { "key": 2011, "value": 7.1 },
-      { "key": 2012, "value": 6.8 },
-      { "key": 2013, "value": 6.9 },
-      { "key": 2014, "value": 6.7 },
-      { "key": 2015, "value": 6.4 },
-      { "key": 2016, "value": 6.1 }
-    ]
-  },
-  {
-    "id": "aufgaben",
-    "type": "sort",
-    "config": {
-      "unit": "%",
-      "order": "descending"
-    },
-    "values": [
-      { "key": "Klimawandel aufhalten", "value": 21 },
-      { "key": "Terrorismus bekämpfen", "value": 17 },
-      { "key": "Frieden sichern", "value": 17 },
-      { "key": "Migration managen", "value": 13 },
-      { "key": "Bürgerrechte schützen", "value": 12 }
-    ]
-  },
-  {
-    "id": "fake",
+    "id": "vegetarier",
     "type": "quiz",
     "config": {
       "unit": "Boolean"
     },
     "values": [
-      { "key": "Deutschland", "value": 40, "correct": false },
-      { "key": "Italien", "value": 60, "correct": true },
-      { "key": "Spanien", "value": 10, "correct": false },
-      { "key": "Portugal", "value": 30, "correct": false }
+      { "key": "Vereintes Königreich", "value": 10, "correct": true },
+      { "key": "Deutschland", "value": 6, "correct": false },
+      { "key": "Spanien", "value": 5, "correct": false },
+      { "key": "Frankreich", "value": 5, "correct": false }
     ]
-  },
-  {
-    "id": "trust",
-    "type": "guess",
-    "config": {
-      "unit": "%"
-    },
-    "values": [
-      { "key": 48 }
-    ]
-<<<<<<< HEAD
-=======
   },
   {
     "id": "teilzeit",
@@ -311,6 +200,5 @@
       { "key": 2017, "value": 712235 },
       { "key": 2018, "value": 645725 }
     ]
->>>>>>> c7de71d7a2e26470b285baab8c1d5f5047211449
   }
 ]
