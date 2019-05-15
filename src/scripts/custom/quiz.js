@@ -1,6 +1,6 @@
 import * as d3 from 'd3';
 
-export default function Draw(options) {
+export default function Quiz(options) {
   let $app = {};
   let $state = {};
   let $data = {};
@@ -24,9 +24,6 @@ export default function Draw(options) {
   function calculate() {
     $app.yMin = d3.min($data.current, (d) => d.value);
     $app.yMax = d3.max($data.current, (d) => d.value);
-
-    $app.y = d3.scaleLinear()
-      .domain([$app.yMin, $app.yMax]);
 
     prepare();
   }

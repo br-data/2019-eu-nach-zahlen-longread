@@ -94,7 +94,8 @@
     "id": "trust",
     "type": "guess",
     "config": {
-      "unit": "%"
+      "unit": "%",
+      "range": [0, 100]
     },
     "values": [
       { "key": 48 }

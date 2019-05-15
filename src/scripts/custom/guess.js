@@ -1,7 +1,6 @@
 import * as d3 from 'd3';
-import * as Sortable from 'sortablejs';
 
-export default function Sort(options) {
+export default function Guess(options) {
   let $app = {};
   let $state = {};
   let $data = {};
@@ -16,10 +15,7 @@ export default function Sort(options) {
 
   // Transform and filter the data for the current dataset
   function transform() {
-    $data.current = $data.data.values.sort((a, b) =>
-      d3[$data.data.config.order](a.value, b.value)
-    );
-    $data.user = d3.shuffle($data.current.slice());
+    $data.current = $data.data.values;
 
     calculate();
   }
@@ -27,6 +23,9 @@ export default function Sort(options) {
   function calculate() {
     $app.yMin = d3.min($data.current, (d) => d.value);
     $app.yMax = d3.max($data.current, (d) => d.value);
+
+    $app.scale = d3.scaleLinear()
+      .domain($data.data.config.range);
 
     prepare();
   }
@@ -46,53 +45,51 @@ export default function Sort(options) {
   }
 
   function render() {
-    $app.listParent = $app.container.select('.content')
-      .append('ol');
+    $app.guess = $app.container.select('.content');
 
-    $app.list = $app.listParent.selectAll('li')
-      .data($data.user)
+    $app.input = $app.guess.append('input')
+      .attr('type', 'range')
+      .attr('value', $data.data.config.range[0])
+      .attr('min', $data.data.config.range[0])
+      .attr('max', $data.data.config.range[1])
+      .attr('list', `ticks-${$data.data.id}`);
+
+    $app.tickmarks = $app.guess.append('datalist')
+      .attr('id', `ticks-${$data.data.id}`)
+      .selectAll('option')
+      .data($app.scale.ticks(10))
       .enter()
-      .append('li');
+      .append('option')
+      .attr('value', d => d)
+      .attr('label', (d, i, p) => {
+        console.log(d, i, p.length);
 
-    $app.listButton = $app.list.append('div')
-      .classed('button', true);
+        if (i === 0 || i+1 === p.length) {
+          return d;
+        }
+      });
 
-    $app.listButton.append('i')
-      .classed('icon-move', true);
+  // <input type="range" list="tickmarks">
 
-    $app.listButton.append('span')
-      .text(d => d.key);
-
-    $app.sortable = new Sortable($app.container.select('ol').node(), {
-      animation: 150,
-      ghostClass: 'moving'
-    });
+  // <datalist id="tickmarks">
+  //   <option value="0" label="0%">
+  //   <option value="10">
+  //   <option value="20">
+  //   <option value="30">
+  //   <option value="40">
+  //   <option value="50" label="50%">
+  //   <option value="60">
+  //   <option value="70">
+  //   <option value="80">
+  //   <option value="90">
+  //   <option value="100" label="100%">
+  // </datalist>
 
     $state.started = true;
   }
 
-  function handleComplete() {
-
+  function handleComplete(event) {
     if (!$state.completed) {
-      $app.sortable.option('disabled', true);
-
-      $app.list
-        .select('i')
-        .remove();
-
-      $app.list
-        .select('.button')
-        .insert('strong', ':first-child')
-        .text((d, i) => `${i+1}. `);
-
-      $app.list
-        .append('strong')
-        .text(d => ' ' + pretty(d.value));
-
-      $app.list
-        .sort((a, b) => {
-          return d3.descending(a.value, b.value);
-        });
 
       $app.paragraph
         .transition()
@@ -105,7 +102,7 @@ export default function Sort(options) {
 
   function handleReset() {
 
-    $app.listParent.remove();
+    $app.answers.remove();
     render();
 
     $state.started = false;
@@ -129,4 +126,3 @@ export default function Sort(options) {
     resize
   };
 }
-

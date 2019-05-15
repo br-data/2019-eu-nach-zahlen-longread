@@ -5,6 +5,7 @@ import data from '../data/data.json';
 import Draw from './custom/draw';
 import Sort from './custom/sort';
 import Quiz from './custom/quiz';
+import Guess from './custom/guess';
 
 //import analytics from './modules/analytics';
 
@@ -39,6 +40,13 @@ window.addEventListener('load', () => {
   });
   charts.push(prios);
   prios.init();
+
+  const trust = new Guess({
+    id: 'trust',
+    data: data.filter(d => d.id === 'trust')[0]
+  });
+  charts.push(trust);
+  trust.init();
 
   const treibhaus = new Sort({
     id: 'treibhaus',
