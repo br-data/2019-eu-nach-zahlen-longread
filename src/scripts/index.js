@@ -1,101 +1,32 @@
 import '../styles/index.scss';
 
-import data from '../data/data.json';
+import dataset from '../data/data.json';
 
-import Draw from './custom/draw';
-import Sort from './custom/sort';
-import Quiz from './custom/quiz';
-import Guess from './custom/guess';
+import draw from './custom/draw';
+import sort from './custom/sort';
+import quiz from './custom/quiz';
+import guess from './custom/guess';
 
 //import analytics from './modules/analytics';
 
 window.addEventListener('load', () => {
 
-  const charts = [];
+  const instances = [];
+  const charts = { draw, sort, quiz, guess };
 
-  const erwerbstaetigenquote = new Draw({
-    id: 'erwerbstaetigenquote',
-    data: data.filter(d => d.id === 'erwerbstaetigenquote')[0]
-  });
-  charts.push(erwerbstaetigenquote);
-  erwerbstaetigenquote.init();
+  const elements = Array.prototype.slice.call(
+    document.querySelectorAll('.guessable')
+  );
 
-  const populisten = new Draw({
-    id: 'populisten',
-    data: data.filter(d => d.id === 'populisten')[0]
-  });
-  charts.push(populisten);
-  populisten.init();
+  elements.forEach(container => {
+    const id = container.id;
+    const data = dataset.filter(d => d.id === id)[0];
 
-  const jugendarbeitslosigkeit = new Sort({
-    id: 'jugendarbeitslosigkeit',
-    data: data.filter(d => d.id === 'jugendarbeitslosigkeit')[0]
+    if (data && data.type) {
+      const instance = new charts[data.type]({id, data});
+      instance.init();
+    }
   });
-  charts.push(jugendarbeitslosigkeit);
-  jugendarbeitslosigkeit.init();
-
-  const prios = new Sort({
-    id: 'prios',
-    data: data.filter(d => d.id === 'prios')[0]
-  });
-  charts.push(prios);
-  prios.init();
-
-  const trust = new Guess({
-    id: 'trust',
-    data: data.filter(d => d.id === 'trust')[0]
-  });
-  charts.push(trust);
-  trust.init();
-
-  const treibhaus = new Sort({
-    id: 'treibhaus',
-    data: data.filter(d => d.id === 'treibhaus')[0]
-  });
-  charts.push(treibhaus);
-  treibhaus.init();
-
-  const auslaenderanteil = new Quiz({
-    id: 'auslaenderanteil',
-    data: data.filter(d => d.id === 'auslaenderanteil')[0]
-  });
-  charts.push(auslaenderanteil);
-  auslaenderanteil.init();
-
-  const age = new Quiz({
-    id: 'age',
-    data: data.filter(d => d.id === 'age')[0]
-  });
-  charts.push(age);
-  age.init();
-
-  const vegetarier = new Quiz({
-    id: 'vegetarier',
-    data: data.filter(d => d.id === 'vegetarier')[0]
-  });
-  charts.push(vegetarier);
-  vegetarier.init();
-
-  const spitzensteuer = new Sort({
-    id: 'spitzensteuer',
-    data: data.filter(d => d.id === 'spitzensteuer')[0]
-  });
-  charts.push(spitzensteuer);
-  spitzensteuer.init();
-
-  const asyl = new Draw({
-    id: 'asyl',
-    data: data.filter(d => d.id === 'asyl')[0]
-  });
-  charts.push(asyl);
-  asyl.init();
-
-  const teilzeit = new Sort({
-    id: 'teilzeit',
-    data: data.filter(d => d.id === 'teilzeit')[0]
-  });
-  charts.push(teilzeit);
-  teilzeit.init();
 
   // analytics({
   //   serviceUrl: 'https://ddj.br.de/analytics/track',
@@ -109,17 +40,17 @@ window.addEventListener('load', () => {
   //   respectDNT: true
   // });
 
-  resize(charts);
+  resize(instances);
 });
 
-function resize(charts) {
+function resize(instances) {
   let timeout;
 
   window.onresize = () => {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
-      charts.forEach((chart) => {
-        chart.resize();
+      instances.forEach((instance) => {
+        instance.resize();
       });
     }, 200);
   };
