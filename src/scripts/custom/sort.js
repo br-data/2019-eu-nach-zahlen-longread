@@ -109,12 +109,11 @@ export default function Sort(options) {
   }
 
   function handleReset() {
-
     $app.listParent.remove();
-    render();
-
     $state.started = false;
     $state.completed = false;
+
+    render();
   }
 
   function resize() {

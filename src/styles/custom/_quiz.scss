@@ -8,8 +8,12 @@
     color: $black;
     background: $yellow;
     text-align: center;
-    width: 45%;
+    width: calc(50% - 1em);
     margin: 0 .5em .5em 0;
+
+    @include tablet {
+      width: 100%;
+    }
 
     &:hover {
       color: $white;

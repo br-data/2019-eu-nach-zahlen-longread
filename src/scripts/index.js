@@ -25,6 +25,7 @@ window.addEventListener('load', () => {
     if (data && data.type) {
       const instance = new charts[data.type]({id, data});
       instance.init();
+      instances.push(instance);
     }
   });
 

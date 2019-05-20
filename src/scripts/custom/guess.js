@@ -132,7 +132,12 @@ export default function Guess(options) {
   }
 
   function resize() {
-    $app.scale.range([$config.markerSize, $app.guess.node().getBoundingClientRect().width - $config.markerSize]);
+    $app.scale.range([
+      $config.markerSize,
+      $app.guess.node().getBoundingClientRect().width - $config.markerSize
+    ]);
+
+    $app.value.style('left', `${$app.scale($data.data.config.initial)}px`);
   }
 
   function pretty(number) {
