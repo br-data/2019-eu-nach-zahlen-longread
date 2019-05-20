@@ -55,12 +55,16 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - `quiz`: eine Auswahl an Fragen, von denen eine richtig ist
 - `guess`: einen Wert schätzen
 
-## To Do
-- Drawable: Labels immer im Vordergrund zeichnen
-- Drawable: `$config` und `$data.data.config` mergen
+## To Do (priorisiert)
+- Guess: Auswertung und Refresh hinzufügen
+- Vorschaubild und Header
+- Sharing-Links und Meta-Tags 
+- Text-Overflow im mobilen Layout fixen
 - Sortable: Auflösung animieren
-- Sortable: Anzeigen welche Positionen richtig geschätzt wurden
-- Sortable: Index des Elements ausgeben, statt der Daten (Bug)
-- Quiz: Hover-State deaktivieren wenn Quiz ausgewertet wurde
+- Sortable: Benutzerindex anzeigen (?)
+- Drawable: Labels immer im Vordergrund zeichnen
+- Quiz: Hover-State deaktivieren, wenn Quiz ausgewertet wurde
+- Styles für aktiv, falsch, korrekt harmonisieren
+- BR24-Style abgleichen und ggf. anpassen
+- `$config` und `$data.data.config` mergen
 - Funktion `pretty()` modularisieren
-- Programmatische Initialisierung

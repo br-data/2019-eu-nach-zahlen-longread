@@ -78,20 +78,20 @@ export default function Sort(options) {
       $data.userOrder = $app.sortable.toArray();
 
       $app.list
-        .sort((a, b) => {
-          return d3.descending(a.value, b.value);
-        });
+        .sort((a, b) => d3.descending(a.value, b.value));
 
       $data.correctOrder = $app.sortable.toArray();
 
-      $app.list
-        .select('i')
+      $app.list.select('i')
         .attr('class', (d, i) => {
           const userIndex = $data.userOrder.indexOf(`${i}`);
           const correctIndex = $data.correctOrder.indexOf(`${i}`);
 
-          return (userIndex === correctIndex) ? 'icon-ok ' : 'icon-cancel';
+          return (userIndex === correctIndex) ? 'icon-ok' : 'icon-cancel';
         });
+
+      // $app.list.select('span')
+      //   .text((d, i) => `${d.key} (${$data.userOrder.indexOf(`${i+1}`)}.)`);
 
       $app.list
         .append('strong')
