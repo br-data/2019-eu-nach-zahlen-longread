@@ -17,13 +17,12 @@
     }
 
     &.correct {
-      font-weight: bold;
-      background: #a6e207;
+      background: $correct;
     }
 
     &.wrong {
       color: $white;
-      background: #e24307;
+      background: $wrong;
     }
   }
 }

@@ -99,7 +99,7 @@ export default function Guess(options) {
   }
 
   function handleReset() {
-    $app.answers.remove();
+    $app.guess.selectAll('*').remove();
     render();
 
     $state.started = false;
