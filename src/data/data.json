@@ -72,9 +72,9 @@
       "unit": "Jahre"
     },
     "values": [
-      { "key": "Irland", "value": 36.9, "correct": false },
-      { "key": "Italien", "value": 45.9, "correct": true },
-      { "key": "Deutschland", "value": 45.9, "correct": true },
+      { "key": "Irland", "value": 36.9, "correct": true },
+      { "key": "Italien", "value": 45.9, "correct": false },
+      { "key": "Deutschland", "value": 45.9, "correct": false },
       { "key": "Spanien", "value": 43.2, "correct": false }
     ]
   },
