@@ -52,7 +52,8 @@ export default function Sort(options) {
     $app.list = $app.listParent.selectAll('li')
       .data($data.user)
       .enter()
-      .append('li');
+      .append('li')
+      .attr('data-id', (d, i) => i);
 
     $app.listButton = $app.list.append('div')
       .classed('button', true);
@@ -63,36 +64,40 @@ export default function Sort(options) {
     $app.listButton.append('span')
       .text(d => d.key);
 
-    $app.sortable = new Sortable($app.container.select('ol').node(), {
+    $app.sortable = new Sortable($app.listParent.node(), {
       animation: 150,
-      ghostClass: 'moving'
+      ghostClass: 'moving',
+      dataIdAttr: 'data-id'
     });
 
     $state.started = true;
   }
 
   function handleComplete() {
-
     if (!$state.completed) {
-      $app.sortable.option('disabled', true);
-
-      $app.list
-        .select('i')
-        .remove();
-
-      $app.list
-        .select('.button')
-        .insert('strong', ':first-child')
-        .text((d, i) => `${i+1}. `);
-
-      $app.list
-        .append('strong')
-        .text(d => ' ' + pretty(d.value));
+      $data.userOrder = $app.sortable.toArray();
 
       $app.list
         .sort((a, b) => {
           return d3.descending(a.value, b.value);
         });
+
+      $data.correctOrder = $app.sortable.toArray();
+
+      $app.list
+        .select('i')
+        .attr('class', (d, i) => {
+          const userIndex = $data.userOrder.indexOf(`${i}`);
+          const correctIndex = $data.correctOrder.indexOf(`${i}`);
+
+          return (userIndex === correctIndex) ? 'icon-ok ' : 'icon-cancel';
+        });
+
+      $app.list
+        .append('strong')
+        .text(d => ' ' + pretty(d.value));
+
+      $app.sortable.option('disabled', true);
 
       $app.paragraph
         .transition()

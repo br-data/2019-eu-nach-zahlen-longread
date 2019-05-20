@@ -61,5 +61,6 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - Sortable: Auflösung animieren
 - Sortable: Anzeigen welche Positionen richtig geschätzt wurden
 - Sortable: Index des Elements ausgeben, statt der Daten (Bug)
+- Quiz: Hover-State deaktivieren wenn Quiz ausgewertet wurde
 - Funktion `pretty()` modularisieren
 - Programmatische Initialisierung

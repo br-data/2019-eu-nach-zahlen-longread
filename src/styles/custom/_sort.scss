@@ -1,12 +1,7 @@
 .sort {
 
   ul, ol {
-    padding: 0;
-    list-style-position: inside;
-  }
-
-  li {
-    width: fit-content;
+    padding: 1.1em;
   }
 
   .content {
@@ -20,6 +15,14 @@
 
     i {
       margin-right: .25em;
+
+      &.icon-cancel {
+        color: $wrong;
+      }
+
+      &.icon-ok {
+        color: #699000;
+      }
     }
   }
 
