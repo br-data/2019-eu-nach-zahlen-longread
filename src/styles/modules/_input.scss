@@ -1,70 +1,70 @@
-  input[type=range] {
-    -webkit-appearance: none;
-    width: 100%;
-    margin: 8px 0;
-  }
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 8px 0;
+}
 
-  input[type=range]:focus {
-    outline: none;
-  }
+input[type=range]:focus {
+  outline: none;
+}
 
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 10px;
-    cursor: pointer;
-    background: $yellow;
-    border-radius: .5em;
-  }
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: $yellow;
+  border-radius: .5em;
+}
 
-  input[type=range]::-webkit-slider-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background: $blue;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -10px;
-  }
+input[type=range]::-webkit-slider-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: $blue;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -10px;
+}
 
-  input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 10px;
-    cursor: pointer;
-    background: $blue;
-    border-radius: .5em;
-  }
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: $blue;
+  border-radius: .5em;
+}
 
-  input[type=range]::-moz-range-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background: $blue;
-    cursor: pointer;
-  }
+input[type=range]::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: $blue;
+  cursor: pointer;
+}
 
-  input[type=range]::-ms-track {
-    width: 100%;
-    height: 10px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-    border-radius: .5em;
-  }
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+  border-radius: .5em;
+}
 
-  input[type=range]::-ms-fill-lower {
-    background: $yellow;
-  }
+input[type=range]::-ms-fill-lower {
+  background: $yellow;
+}
 
-  input[type=range]::-ms-fill-upper {
-    background: $yellow;
-  }
+input[type=range]::-ms-fill-upper {
+  background: $yellow;
+}
 
-  input[type=range]::-ms-thumb {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background: #102087;
-    cursor: pointer;
-    height: 10px;
-  }
+input[type=range]::-ms-thumb {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #102087;
+  cursor: pointer;
+  height: 10px;
+}

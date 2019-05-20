@@ -16,10 +16,10 @@ Um die Module installieren und die Entwicklerwerkzeuge nutzen zu können, muss v
 ## Anpassen
 Neue Fragen können in `scr/index.html` hinzugefügt werden. Die Daten und Einstellungen zur Frage müssen in der Datei `src/data/data.json` ergänzt werden. Die Frage wird mit den Daten über das Attribut `id` verknüpft.
 
-Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit der `id="trust"` hinzugefügt.
+Ein Beispiel für eine neue Schätzfrage. Im HTML wird eine neue `section` mit der `id="trust"` und der Klasse `class="guessable"` hinzugefügt.
 
 ```html
-<div class="block" data-id="trust">
+<div class="block guessable" data-id="trust">
   <h2>Schätzen Sie den Wert? Wie hoch ist der Anteil der EU-Bürger, die dem EP vertrauen?</h2>
 
   <div class="content"></div>
@@ -56,7 +56,6 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - `guess`: einen Wert schätzen
 
 ## To Do (priorisiert)
-- Guess: Auswertung und Refresh hinzufügen
 - Vorschaubild und Header
 - Sharing-Links und Meta-Tags 
 - Text-Overflow im mobilen Layout fixen
