@@ -32,18 +32,13 @@
     "config": {
       "unit": "%",
       "max": 25,
-      "breakpoint": 1984
+      "breakpoint": 1999
     },
     "values": [
-      { "key": 1979, "value": 0.0 },
-      { "key": 1984, "value": 2.2 },
-      { "key": 1989, "value": 2.5 },
-      { "key": 1994, "value": 3.5 },
-      { "key": 1999, "value": 4.2 },
-      { "key": 2004, "value": 8.5 },
-      { "key": 2009, "value": 11.5 },
-      { "key": 2014, "value": 21.7 },
-      { "key": 2019, "value": 15.5 }
+      { "key": 1999, "value": 8 },
+      { "key": 2004, "value": 14 },
+      { "key": 2009, "value": 11 },
+      { "key": 2014, "value": 21 },
     ]
   },
   {
