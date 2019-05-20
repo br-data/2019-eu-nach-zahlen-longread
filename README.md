@@ -63,6 +63,7 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - Sortable: Auflösung animieren
 - Sortable: Benutzerindex anzeigen (?)
 - Drawable: Labels immer im Vordergrund zeichnen
+- Drawable: Achsenlabels aus Keys der Daten generieren
 - Quiz: Hover-State deaktivieren, wenn Quiz ausgewertet wurde
 - Styles für aktiv, falsch, korrekt harmonisieren
 - BR24-Style abgleichen und ggf. anpassen

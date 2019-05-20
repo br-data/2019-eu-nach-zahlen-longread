@@ -4,6 +4,9 @@ export default function Guess(options) {
   let $app = {};
   let $state = {};
   let $data = {};
+  let $config = {
+    markerSize: 36 / 2
+  };
 
   function init() {
     $app.id = options.id;
@@ -47,7 +50,10 @@ export default function Guess(options) {
   function render() {
     $app.guess = $app.container.select('.content');
 
-    $app.scale.range([16, $app.guess.node().getBoundingClientRect().width - 16]);
+    $app.scale.range([
+      $config.markerSize,
+      $app.guess.node().getBoundingClientRect().width - $config.markerSize
+    ]);
 
     $app.value = $app.guess.append('div')
       .classed('value', true)
@@ -57,7 +63,7 @@ export default function Guess(options) {
     $app.valueText = $app.value.append('span')
       .text($data.data.config.initial);
 
-    $app.value.append('div')
+    $app.droplet = $app.value.append('div')
       .classed('droplet', true);
 
     $app.input = $app.guess.append('input')
@@ -89,6 +95,25 @@ export default function Guess(options) {
 
   function handleComplete() {
     if (!$state.completed) {
+      const value = $data.current[0].key;
+      const offsetX = $app.scale(value);
+      const transition = d3.transition()
+        .duration(150)
+        .ease(d3.easeLinear);
+
+      $app.input
+        .attr('disabled', 'true');
+
+      $app.value
+        .transition(transition)
+        .style('left', `${offsetX}px`);
+
+      $app.droplet
+        .transition(transition)
+        .style('background', '#a6e207');
+
+      $app.valueText.text(value);
+
       $app.paragraph
         .transition()
         .duration(1000)
@@ -107,7 +132,7 @@ export default function Guess(options) {
   }
 
   function resize() {
-    $app.scale.range([16, $app.guess.node().getBoundingClientRect().width - 16]);
+    $app.scale.range([$config.markerSize, $app.guess.node().getBoundingClientRect().width - $config.markerSize]);
   }
 
   function pretty(number) {
