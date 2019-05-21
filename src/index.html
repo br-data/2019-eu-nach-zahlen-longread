@@ -44,6 +44,10 @@
   <meta name="title" content="BR Data: Template für Longreads">
   <meta name="description" content="Dieses HTML-Template ermöglicht es, schöne Longread- und Storytelling-Projekte außerhalb von Sophora zu realisieren.">
   <meta name="keywords" content="Longread, Template, Storytelling, Datenjournalismus, BR, BR Data, Bayerischer Rundfunk">
+
+  <!-- Web analytics -->
+  <script type="text/javascript" src="https://tag.aticdn.net/596277/smarttag.js"></script>
+  <script type="text/javascript" src="https://script.ioam.de/iam.js"></script>
 </head>
 
 <body>
@@ -243,5 +247,63 @@
       </section>
     </footer>
   </article>
+
+  <!-- AT Internet -->
+  <script>
+    var referrer = (function () {
+      return typeof window != 'undefined' ? window.document.referrer : null;
+    })();
+
+    var os = (function () {
+      if (typeof window != 'undefined') {
+        var ua = window.navigator.userAgent, p = window.navigator.platform, n = null;
+        return n = -1 !== ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'].indexOf(p) ? 'MacOS' : -1 !== ['iPhone', 'iPad', 'iPod'].indexOf(p) ? 'iOS' : -1 !== ['Win32', 'Win64', 'Windows', 'WinCE'].indexOf(p) ? 'Windows' : /Android/.test(ua) ? 'Android' : !n && /Linux/.test(p) ? 'Linux' : 'unbekannt';
+      }
+      return null;
+    })();
+
+    var tag = new ATInternet.Tracker.Tag({
+      secure: true,
+      cookieSecure: true,
+      ignoreEmptyChapterValue: true
+    });
+
+    tag.page.set({
+      name: 'eu-nach-zahlen',
+      chapter1: null,
+      chapter2: null,
+      level2: 19
+    });
+
+    tag.customVars.set({
+      site: {
+        1: '[Sonstiges]',
+        2: '[ohne Wellenbezug]',
+        5: '[keine Sendereihe]',
+        6: '[Startseite]',
+        7: '[eu-nach-zahlen]',
+        8: '[Gift im System]',
+        10: 20181204,
+        11: '[https://web.br.de/interaktiv/eu-nach-zahlen/]',
+        12: '[eu-nach-zahlen]',
+        13: referrer ? ('[' + referrer + ']') : null,
+        14: '[Web]',
+        16: os ? ('[' + os + ']') : null,
+        17: '[Web-only]'
+      }
+    });
+
+    tag.dispatch();
+  </script>
+
+  <!-- IVW -->
+  <script type="text/javascript">
+    if(typeof iom != 'undefined') {
+      iom.c({
+        'st': 'bronline',
+        'cp': 'br_online\/nachrichten\/'
+      }, 1);
+    }
+  </script>
 </body>
 </html>
