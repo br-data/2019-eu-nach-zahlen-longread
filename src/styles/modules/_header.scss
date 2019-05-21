@@ -5,6 +5,10 @@ header {
   display: flex;
   background: $blue;
 
+  img {
+    padding: 0 20px;
+  }
+
   section {
     color: $white;
     align-self: flex-end;
