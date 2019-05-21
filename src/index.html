@@ -51,24 +51,23 @@
 </head>
 
 <body>
-  <article class="main">
-
+  <article class="main" data-timer="start">
     <nav class="navigation">
-      <a class="logo" href="https://www.br.de/nachrichten/" target="_blank" rel="noopener">
+      <a class="logo" href="https://www.br.de/nachrichten/" target="_blank" rel="noopener" data-click="click-br24-logo">
         <img src="./assets/images/br24.svg" alt="BR24 Logo" data-click="click-br24-logo">
       </a>
 
       <div class="sharing">
-        <a title="Auf Facebook teilen" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//web.br.de/interaktiv/eu-nach-zahlen/">
+        <a title="Auf Facebook teilen" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//web.br.de/interaktiv/eu-nach-zahlen/" target="_blank" rel="noopener" data-click="click-sharing-facebook">
           <i class="icon-facebook"></i>
         </a>
-        <a title="Auf Twitter teilen" href="https://twitter.com/intent/tweet?url=https://web.br.de/interaktiv/eu-nach-zahlen&amp;text=BR+Data%3A+Template+f%C3%BCr+%23Longreads&amp;hashtags=storytelling,template&amp;via=br_data&amp;related=br_data,br24,br_presse">
+        <a title="Auf Twitter teilen" href="https://twitter.com/intent/tweet?url=https://web.br.de/interaktiv/eu-nach-zahlen&amp;text=BR+Data%3A+Template+f%C3%BCr+%23Longreads&amp;hashtags=storytelling,template&amp;via=br_data&amp;related=br_data,br24,br_presse" target="_blank" rel="noopener" data-click="click-sharing-twitter">
           <i class="icon-twitter"></i>
         </a>
-        <a title="Mit WhatsApp teilen" href="whatsapp://send?text=BR Data: Template für Longreads https://web.br.de/interaktiv/eu-nach-zahlen" data-action="share/whatsapp/share">
+        <a title="Mit WhatsApp teilen" href="whatsapp://send?text=BR Data: Template für Longreads https://web.br.de/interaktiv/eu-nach-zahlen" target="_blank" rel="noopener" data-click="click-sharing-whatsapp" data-action="share/whatsapp/share">
           <i class="icon-whatsapp"></i>
         </a>
-        <a title="Per E-Mail verschicken" href="mailto:?to=&amp;subject=BR Data: Template für Longreads&amp;body=BR Data: Template für Longreads https://web.br.de/interaktiv/eu-nach-zahlen">
+        <a title="Per E-Mail verschicken" href="mailto:?to=&amp;subject=BR Data: Template für Longreads&amp;body=BR Data: Template für Longreads https://web.br.de/interaktiv/eu-nach-zahlen" target="_blank" rel="noopener" data-click="click-sharing-email">
           <i class="icon-mail"></i>
         </a>
       </div>
@@ -80,8 +79,8 @@
 
     <header id="header">
       <section>
+        <img src="../assets/images/eu-nach-zahlen.svg" alt="Europa nach Zahlen">
         <div class="block">
-          <img src="../assets/images/eu-nach-zahlen.svg" alt="Europa nach Zahlen">
           <p>Populismus, Klimawandel, Demografie: Der Kontinent verändert sich und Europa steht vor der Wahl. Was hat sich getan? Zeichnen Sie das Diagramm und schätzen Sie die richtigen Werte.</p>
         </div>
       </section>
@@ -90,11 +89,11 @@
     <section>
       <!--1-->
       <div class="block guessable" id="prios">
-        <h2>Sortieren Sie: Auf welche Aufgaben sollte sich die EU nach Meinung der Bürger fokussieren?</h2>
+        <h2 data-observer="waypoint-1-prios">Sortieren Sie: Auf welche Aufgaben sollte sich die EU nach Meinung der EU-Bürger fokussieren? (meist genanntes zuerst)</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-1-prios">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-1-prios"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Nach einer Umfrage der Bertelsmann Stiftung halten die EU-Bürger den Schutz der Bürgerrechte für die wichtigste Aufgabe der EU. Auf Ebene der Mitgliedsstaaten gibt es jedoch Unterschiede: So wollen die deutschen Befragten, dass sich die EU in erster Linie dem <a href="https://www.br.de/nachrichten/deutschland-welt/europawahl-was-die-menschen-bewegt,ROS0p0v" target="_blank" >Kampf gegen den Klimawandel</a> widmet. Für die Franzosen ist der Terrorismus das drängendste Problem.</p>
 
@@ -103,11 +102,11 @@
 
       <!--2-->
       <div class="block guessable" id="trust">
-        <h2>Schätzen Sie: Wie hoch ist der Anteil der EU-Bürger, die dem Europäischen Parlament vertrauen?</h2>
+        <h2 data-observer="waypoint-2-trust">Schätzen Sie: Wie hoch ist der Anteil der EU-Bürger, die dem Europäischen Parlament vertrauen?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-2-trust">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-2-trust"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Seit 1973 gibt die Europäische Kommission die Meinungsumfrage <a href="https://www.br.de/nachrichten/deutschland-welt/umfrage-deutsche-verbinden-mit-eu-vor-allem-frieden,RIR0TyP" target="_blank">Eurobarometer</a> in Auftrag. Eine der Fragen ist, ob die Bürger dem Europäischen Parlament vertrauen. Die Befragten des EU-Beitrittskandidaten Albanien haben dieser Frage besonders häufig zugestimmt. Hier vertrauen 78 % dem EU-Parlament. In der gesamten EU ist dies nur bei 48 % der Befragten der Fall (Deutschland 60 %).</p>
         <!--Daten: <a href="http://ec.europa.eu/commfrontoffice/publicopinion/index.cfm/Chart/getChart/themeKy/9/groupKy/23">Eurobarometer 2018</a>-->
@@ -115,11 +114,11 @@
 
       <!--3-->
       <div class="block guessable" id="populisten">
-        <h2 class="question">Zeichnen Sie die Linie: Wie hat sich der Anteil der populistischen Parteien im Europaparlament entwickelt?</h2>
+        <h2 data-observer="waypoint-3-populisten">Zeichnen Sie die Linie: Wie hat sich der Anteil der populistischen Parteien im Europaparlament entwickelt?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-3-populisten">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-3-populisten"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;"><a href="https://www.br.de/nachrichten/bayern/parteien-zur-europawahl-extremismus-und-populismus,RPxGdBU" target="_blank">Populistische Parteien</a> gewannen im Europaparlament bei den vergangenen Wahlen zunehmend an Einfluss. Über die Definition von Populismus wird in der Wissenschaft kontrovers diskutiert. Diese Auswertung basiert auf der Klassifizierung des internationalen Forschungsprojekts <a href="https://popu-list.org/">PopuList</a>. Hierfür wurde die Definition des renommierten Politologen und Populismus-Experten Cas Mudde (2004) herangezogen.</p>
         <!--Daten: <a href="https://popu-list.org/">PopuList 2019</a>-->
@@ -127,11 +126,11 @@
 
       <!--4-->
       <div class="block guessable" id="frauenanteil">
-        <h2>Zeichnen Sie: Wie hat sich der Frauenanteil im Europäischen Parlament entwickelt?</h2>
+        <h2 data-observer="waypoint-4-frauenanteil">Zeichnen Sie: Wie hat sich der Frauenanteil im Europäischen Parlament entwickelt?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-4-frauenanteil">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-4-frauenanteil"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Der Frauenanteil im EU-Parlament steigt seit der ersten Wahl im Jahr 1979 kontinuierlich an, zuletzt betrug er 36,4 %. Zum Vergleich: Im Deutschen Bundestag ist der Frauenanteil bei der letzten Wahl <a href="https://www.br.de/nachrichten/deutschland-welt/weniger-frauen-im-neuen-bundestag,QWahOdC" target="_blank">wieder gesunken</a> - von 37,3 % auf aktuell 31,3 %. Spitzenreiter in der EU ist das spanische Parlament mit einem Frauenanteil von 47 %.</p>
         <!--Daten: <a href="http://www.europarl.europa.eu/news/de/headlines/society/20190226STO28804/frauen-im-europaischen-parlament-infografik">Europaparlament 2019</a>-->
@@ -139,11 +138,11 @@
 
       <!--5-->
       <div class="block guessable" id="age">
-        <h2>Welches EU-Land hat die jüngste Bevölkerung?</h2>
+        <h2 data-observer="waypoint-5-age">Welches EU-Land hat die jüngste Bevölkerung?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-5-age">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-5-age"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Die Deutschen sind alt, das ist bekannt. Aber auch das früher als kinderreich geltende Italien hat mittlerweile eine der niedrigsten Geburtenraten in Europa und das gleiche durchschnittliche Lebensalter (Median) wie die Deutschen. Einzig die Iren (36,9), Zyprioten (37,4), Luxemburger (39,4) und Slowaken (39,8) haben ein Durchschnittsalter von unter 40 Jahren.</p>
         <!--Daten: <a href="https://ec.europa.eu/eurostat/statistics-explained/images/e/eb/Medianalter_der_Bev%C3%B6lkerung%2C_2007-2017_%28in_Jahren%29_FP18-DE.png">Eurostat 2017</a>-->
@@ -151,11 +150,11 @@
 
       <!--6-->
       <div class="block guessable" id="jugendarbeitslosigkeit">
-        <h2>Sortieren Sie: In welchen Ländern ist die Jugendarbeitslosigkeit am höchsten?</h2>
+        <h2 data-observer="waypoint-6-jugendarbeitslosigkeit">Sortieren Sie: In welchen Ländern ist die Jugendarbeitslosigkeit am höchsten?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-6-jugendarbeitslosigkeit">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-6-jugendarbeitslosigkeit"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Zur Zeit der Finanzkrise demonstrierten griechische Jugendliche gegen die Chancenlosigkeit von Berufsanfängern auf dem Arbeitsmarkt. Auch knapp zehn Jahre später ist die Jugendarbeitslosigkeit in Griechenland am höchsten. In Deutschland sind nur 6,2 % der Jugendlichen ohne Arbeit - Bestwert in der EU.</p>
         <!--Daten: <a href="https://ec.europa.eu/eurostat/statistics-explained/images/f/f7/Youth_unemployment_figures%2C_2008-2018_%28%25%29_T1.png">Eurostat 2018</a>-->
@@ -163,22 +162,22 @@
 
       <!--7-->
       <div class="block guessable" id="auslaenderanteil">
-        <h2>Welches EU-Land hat den höchsten Ausländeranteil?</h2>
+        <h2 data-observer="waypoint-7-auslaenderanteil">Welches EU-Land hat den höchsten Ausländeranteil?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-7-auslaenderanteil">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-7-auslaenderanteil"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Luxemburg als multikulturelles Zentrum Europas? Allein drei offizielle Amtssprachen, Luxemburgisch, Französisch und Deutsch werden hier gesprochen. Die größte ausländische Gruppe in Luxemburg sind die Portugiesen, sie stellen über 16 % der Gesamtbevölkerung. In Polen, Rumänien und die Bulgarien bleibt man unter sich: Hier sind die Ausländerquoten mit unter 1 % EU-weit am niedrigsten.</p>
       </div>
 
       <!--8-->
        <div class="block guessable" id="asyl">
-        <h2 class="question">Zeichnen Sie die Linie: Wie haben sich die Asylbewerberzahlen in der EU entwickelt?</h2>
+        <h2 data-observer="waypoint-8-asyl">Zeichnen Sie die Linie: Wie haben sich die Asylbewerberzahlen in der EU entwickelt?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-8-asyl">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-8-asyl"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Der Krieg in Syrien und die unsichere Lage in vielen anderen Ländern spiegeln sich in der Zahl der Menschen wieder, die in einem EU-Staat einen Asylantrag gestellt haben. Zwischen den einzelnen EU-Ländern <a href="https://www.br.de/nachrichten/deutschland-welt/europas-zukunft-wie-soll-die-eu-mit-gefluechteten-umgehen,RPxQnuz" target="_blank">gab es bis zuletzt große Unterschiede</a>: Im Jahr 2018 wurden in Deutschland 184.180 Asylbewerber registriert, in Frankreich 120.425 und in Estland lediglich 95.</p>
         <!--Daten: <a href="http://appsso.eurostat.ec.europa.eu/nui/show.do?dataset=migr_asyappctza&lang=de">EU-Kommission 2018</a>-->
@@ -186,11 +185,11 @@
 
       <!--9-->
       <div class="block guessable" id="export">
-        <h2>Schätzen Sie: Wie viel trägt Deutschland zu Warenexporten der EU in Drittländer bei?</h2>
+        <h2 data-observer="waypoint-9-export">Schätzen Sie: Wie viel trägt Deutschland zu Warenexporten der EU in Drittländer bei?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-9-export">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-9-export"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Deutschlands Anteil an EU-Warenexporten in Drittländer beträgt 28 % - einsame Spitze. Die anderen 27 Mitgliedsländer der EU folgen mit großem Abstand. Auf Platz zwei liegt das Vereinigte Königreich mit 11 %. Auch bei Exporten in andere EU-Staaten führt Deutschland mit 22,2 % die Statistik an.</p>
         <!--Daten: <a href="https://ec.europa.eu/eurostat/statistics-explained/index.php?title=File:Extra_EU-28_trade_in_goods,_2018.png">Eurostat 2018</a>-->
@@ -198,11 +197,11 @@
 
       <!--10-->
       <div class="block guessable" id="vegetarier">
-        <h2>Welches dieser EU-Länder hat den höchsten Anteil an Menschen, die sich vegetarisch oder vegan ernähren?</h2>
+        <h2 data-observer="waypoint-10-vegetarier">Welches dieser EU-Länder hat den höchsten Anteil an Menschen, die sich vegetarisch oder vegan ernähren?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-10-vegetarier">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-10-vegetarier"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Kein Fleisch, kein Fisch, kein Käse: Viele Menschen ernähren sich <a href="https://www.br.de/nachrichten/bayern/fragbr24,QgKKfme" target="_blank">vegetarisch oder sogar vegan</a>. Bei englischer Küche denkt man an Fish and Chips und Bacon zum Frühstück. Überraschenderweise stellen die Briten in der EU mit 10 % die meisten Vegetarier und Veganer.</p>
         <!--Daten: <a href="https://daliaresearch.com/blog-vegan-vegetarian-halal/?utm_source=Dalia+Newsletter&utm_campaign=e435f9fff8-">Dalia Research 2017</a>-->
@@ -213,8 +212,8 @@
         <h2>Sortieren Sie: Welcher der folgenden Sektoren beschleunigt den Treibhauseffekt am stärksten?</h2>
 
         <div class="content"></div>
-        <button class="show">Ergebnis anzeigen</button>
-        <button class="reset"><i class="icon-ccw"></i></button>
+        <button class="show" data-click="show-1-prios">Ergebnis anzeigen</button>
+        <button class="reset" data-click="reset-"><i class="icon-ccw"></i></button>
 
         <p class="answer" style="opacity:0;">Ob Heizung oder künstliches Licht – in fast allen Lebensbereich steckt Energie. Da sie größtenteils aus fossilen Energieträgern gewonnen wird, ist sie die wichtigste Quelle von Treibhausgasemissionen. Und das ist ein Problem, denn diese Emissionen führen zu einem globalen Temperaturanstieg. Zudem gefährden sie die Atemluft, das Ökosystem und die menschliche Gesundheit.</p>
       </div>
@@ -225,7 +224,7 @@
     <footer class="about">
       <section>
         <div class="block">
-          <h3 data-observer="waypoint-12-projekt">Über das Projekt</h3>
+          <h3 data-observer="waypoint-10-projekt">Über das Projekt</h3>
 
           <p>„EU nach Zahlen“ ist ein Projekt von <a href="https://www.br.de/nachricht/br-recherche/index.html" data-click="click-link-brrecherche">BR Recherche</a> und <a href="https://www.br.de/extra/br-data/index.html" data-click="click-link-brdata">BR Data</a>.</p>
 

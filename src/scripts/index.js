@@ -7,7 +7,7 @@ import sort from './custom/sort';
 import quiz from './custom/quiz';
 import guess from './custom/guess';
 
-//import analytics from './modules/analytics';
+import analytics from './modules/analytics';
 
 window.addEventListener('load', () => {
 
@@ -29,17 +29,17 @@ window.addEventListener('load', () => {
     }
   });
 
-  // analytics({
-  //   serviceUrl: 'https://ddj.br.de/analytics/track',
-  //   projectId: 'pestizide',
-  //   tracker: {
-  //     click: true,
-  //     observer: true,
-  //     timer: true,
-  //     custom: true
-  //   },
-  //   respectDNT: true
-  // });
+  analytics({
+    serviceUrl: 'https://ddj.br.de/analytics/track',
+    projectId: 'eu-nach-zahlen',
+    tracker: {
+      click: true,
+      observer: true,
+      timer: true,
+      custom: true
+    },
+    respectDNT: false
+  });
 
   resize(instances);
 });
