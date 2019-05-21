@@ -205,7 +205,7 @@ export default function Draw(options) {
     // Axis
     $app.xAxisConstructor = d3.axisBottom()
       .scale($app.x)
-      .tickValues($data.current.map(d => d.key))
+      .tickValues($data.data.values.map(d => d.key))
       .tickSizeInner(-$app.height)
       .tickSizeOuter(0)
       .tickPadding(10)

@@ -21,8 +21,8 @@
   <meta name="twitter:creator" content="@br_data">
   <meta name="twitter:title" content="BR Data: Template für Longreads">
   <meta name="twitter:description" content="Dieses HTML-Template ermöglicht es, schöne Longread- und Storytelling-Projekte außerhalb von Sophora zu realisieren.">
-  <meta name="twitter:url" content="https://web.br.de/interaktiv/longread/">
-  <meta name="twitter:image" content="https://web.br.de/interaktiv/longread/images/image.jpg">
+  <meta name="twitter:url" content="https://web.br.de/interaktiv/eu-nach-zahlen/">
+  <meta name="twitter:image" content="https://web.br.de/interaktiv/eu-nach-zahlen/assets/images/eu-nach-zahlen.jpg">
 
   <!-- Facebook / Open Graph -->
   <meta property="og:type" content="article">
@@ -30,20 +30,24 @@
   <meta property="og:site_name" content="BR">
   <meta property="og:title" content="BR Data: Template für Longreads">
   <meta property="og:description" content="Dieses HTML-Template ermöglicht es, schöne Longread- und Storytelling-Projekte außerhalb von Sophora zu realisieren.">
-  <meta property="og:url" content="https://web.br.de/interaktiv/longread/">
-  <meta property="og:image" content="https://web.br.de/interaktiv/longread/images/image.jpg">
+  <meta property="og:url" content="https://web.br.de/interaktiv/eu-nach-zahlen/">
+  <meta property="og:image" content="https://web.br.de/interaktiv/eu-nach-zahlen/assets/images/eu-nach-zahlen.jpg">
 
   <!-- Google+ / Schema.org  -->
   <meta itemprop="author" content="BR Data">
   <meta itemprop="name" content="BR Data: Template für Longreads">
   <meta itemprop="description" content="Dieses HTML-Template ermöglicht es, schöne Longread- und Storytelling-Projekte außerhalb von Sophora zu realisieren.">
-  <meta itemprop="image" content="https://web.br.de/interaktiv/longread/images/image.jpg">
+  <meta itemprop="image" content="https://web.br.de/interaktiv/eu-nach-zahlen/assets/images/eu-nach-zahlen.jpg">
 
   <!-- General SEO -->
   <meta name="author" content="BR Data">
   <meta name="title" content="BR Data: Template für Longreads">
   <meta name="description" content="Dieses HTML-Template ermöglicht es, schöne Longread- und Storytelling-Projekte außerhalb von Sophora zu realisieren.">
   <meta name="keywords" content="Longread, Template, Storytelling, Datenjournalismus, BR, BR Data, Bayerischer Rundfunk">
+
+  <!-- Web analytics -->
+  <script type="text/javascript" src="https://tag.aticdn.net/596277/smarttag.js"></script>
+  <script type="text/javascript" src="https://script.ioam.de/iam.js"></script>
 </head>
 
 <body>
@@ -55,16 +59,16 @@
       </a>
 
       <div class="sharing">
-        <a title="Auf Facebook teilen" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//web.br.de/interaktiv/longread">
+        <a title="Auf Facebook teilen" href="https://www.facebook.com/sharer/sharer.php?u=https%3A//web.br.de/interaktiv/eu-nach-zahlen/">
           <i class="icon-facebook"></i>
         </a>
-        <a title="Auf Twitter teilen" href="https://twitter.com/intent/tweet?url=https://web.br.de/interaktiv/longread&amp;text=BR+Data%3A+Template+f%C3%BCr+%23Longreads&amp;hashtags=storytelling,template&amp;via=br_data&amp;related=br_data,br24,br_presse">
+        <a title="Auf Twitter teilen" href="https://twitter.com/intent/tweet?url=https://web.br.de/interaktiv/eu-nach-zahlen&amp;text=BR+Data%3A+Template+f%C3%BCr+%23Longreads&amp;hashtags=storytelling,template&amp;via=br_data&amp;related=br_data,br24,br_presse">
           <i class="icon-twitter"></i>
         </a>
-        <a title="Mit WhatsApp teilen" href="whatsapp://send?text=BR Data: Template für Longreads https://web.br.de/interaktiv/longread" data-action="share/whatsapp/share">
+        <a title="Mit WhatsApp teilen" href="whatsapp://send?text=BR Data: Template für Longreads https://web.br.de/interaktiv/eu-nach-zahlen" data-action="share/whatsapp/share">
           <i class="icon-whatsapp"></i>
         </a>
-        <a title="Per E-Mail verschicken" href="mailto:?to=&amp;subject=BR Data: Template für Longreads&amp;body=BR Data: Template für Longreads https://web.br.de/interaktiv/longread">
+        <a title="Per E-Mail verschicken" href="mailto:?to=&amp;subject=BR Data: Template für Longreads&amp;body=BR Data: Template für Longreads https://web.br.de/interaktiv/eu-nach-zahlen">
           <i class="icon-mail"></i>
         </a>
       </div>
@@ -243,5 +247,63 @@
       </section>
     </footer>
   </article>
+
+  <!-- AT Internet -->
+  <script>
+    var referrer = (function () {
+      return typeof window != 'undefined' ? window.document.referrer : null;
+    })();
+
+    var os = (function () {
+      if (typeof window != 'undefined') {
+        var ua = window.navigator.userAgent, p = window.navigator.platform, n = null;
+        return n = -1 !== ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'].indexOf(p) ? 'MacOS' : -1 !== ['iPhone', 'iPad', 'iPod'].indexOf(p) ? 'iOS' : -1 !== ['Win32', 'Win64', 'Windows', 'WinCE'].indexOf(p) ? 'Windows' : /Android/.test(ua) ? 'Android' : !n && /Linux/.test(p) ? 'Linux' : 'unbekannt';
+      }
+      return null;
+    })();
+
+    var tag = new ATInternet.Tracker.Tag({
+      secure: true,
+      cookieSecure: true,
+      ignoreEmptyChapterValue: true
+    });
+
+    tag.page.set({
+      name: 'eu-nach-zahlen',
+      chapter1: null,
+      chapter2: null,
+      level2: 19
+    });
+
+    tag.customVars.set({
+      site: {
+        1: '[Sonstiges]',
+        2: '[ohne Wellenbezug]',
+        5: '[keine Sendereihe]',
+        6: '[Startseite]',
+        7: '[eu-nach-zahlen]',
+        8: '[Gift im System]',
+        10: 20181204,
+        11: '[https://web.br.de/interaktiv/eu-nach-zahlen/]',
+        12: '[eu-nach-zahlen]',
+        13: referrer ? ('[' + referrer + ']') : null,
+        14: '[Web]',
+        16: os ? ('[' + os + ']') : null,
+        17: '[Web-only]'
+      }
+    });
+
+    tag.dispatch();
+  </script>
+
+  <!-- IVW -->
+  <script type="text/javascript">
+    if(typeof iom != 'undefined') {
+      iom.c({
+        'st': 'bronline',
+        'cp': 'br_online\/nachrichten\/'
+      }, 1);
+    }
+  </script>
 </body>
 </html>
