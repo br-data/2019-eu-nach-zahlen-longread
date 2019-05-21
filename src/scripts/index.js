@@ -10,7 +10,6 @@ import guess from './custom/guess';
 import analytics from './modules/analytics';
 
 window.addEventListener('load', () => {
-
   const instances = [];
   const charts = { draw, sort, quiz, guess };
 
