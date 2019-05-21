@@ -56,12 +56,8 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - `guess`: einen Wert schätzen
 
 ## To Do (priorisiert)
-- Texte im SVG mit Fallback versehen
-- Sharing-Links und Meta-Tags 
-- Sortable: Auflösung animieren
-- Sortable: Benutzerindex anzeigen (?)
+- Sortable: Animation verbessern
 - Drawable: Labels immer im Vordergrund zeichnen
 - Quiz: Hover-State deaktivieren, wenn Quiz ausgewertet wurde
-- Styles für aktiv, falsch, korrekt harmonisieren
 - `$config` und `$data.data.config` mergen
 - Funktion `pretty()` modularisieren

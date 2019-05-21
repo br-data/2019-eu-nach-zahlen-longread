@@ -77,35 +77,46 @@ export default function Sort(options) {
     if (!$state.completed) {
       $data.userOrder = $app.sortable.toArray();
 
-      $app.list
-        .sort((a, b) => d3.descending(a.value, b.value));
-
-      $data.correctOrder = $app.sortable.toArray();
-
-      $app.list.select('i')
-        .attr('class', (d, i) => {
-          const userIndex = $data.userOrder.indexOf(`${i}`);
-          const correctIndex = $data.correctOrder.indexOf(`${i}`);
-
-          return (userIndex === correctIndex) ? 'icon-ok' : 'icon-cancel';
+      $app.list.transition()
+        .duration(200)
+        .delay((d, i) => i * 150)
+        .style('opacity', 0)
+        .on('end', () => {
+          setTimeout(handleTransition, 750);
         });
-
-      // $app.list.select('span')
-      //   .text((d, i) => `${d.key} (${$data.userOrder.indexOf(`${i+1}`)}.)`);
-
-      $app.list
-        .append('strong')
-        .text(d => ' ' + pretty(d.value));
-
-      $app.sortable.option('disabled', true);
 
       $app.paragraph
         .transition()
         .duration(1000)
         .style('opacity', 1);
-
-      $state.completed = true;
     }
+  }
+
+  function handleTransition() {
+    $app.list.sort((a, b) => d3.descending(a.value, b.value));
+
+    $app.list.transition()
+      .duration(200)
+      .delay((d, i) => i * 150)
+      .style('opacity', 1);
+
+    $data.currentOrder = $app.sortable.toArray();
+    $app.sortable.option('disabled', true);
+
+    $app.list.select('i')
+      .attr('class', (d, i) => {
+        const userIndex = $data.userOrder.indexOf(`${i}`);
+        const currentIndex = $data.currentOrder.indexOf(`${i}`);
+
+        return (userIndex === currentIndex) ? 'icon-ok' : 'icon-cancel';
+      });
+
+    $app.list.select('span')
+      .text((d, i) => `${$data.userOrder.indexOf(`${i}`) + 1}. ${d.key}: `)
+      .append('strong')
+      .text(d => ' ' + pretty(d.value));
+
+    $state.completed = true;
   }
 
   function handleReset() {

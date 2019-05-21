@@ -97,19 +97,18 @@ export default function Guess(options) {
     if (!$state.completed) {
       const value = $data.current[0].key;
       const offsetX = $app.scale(value);
-      const transition = d3.transition()
-        .duration(150)
-        .ease(d3.easeLinear);
 
       $app.input
         .attr('disabled', 'true');
 
       $app.value
-        .transition(transition)
+        .transition()
+        .duration(150)
         .style('left', `${offsetX}px`);
 
       $app.droplet
-        .transition(transition)
+        .transition()
+        .duration(150)
         .style('background', '#a6e207');
 
       $app.valueText.text(value);
@@ -137,7 +136,11 @@ export default function Guess(options) {
       $app.guess.node().getBoundingClientRect().width - $config.markerSize
     ]);
 
-    $app.value.style('left', `${$app.scale($data.data.config.initial)}px`);
+    if ($state.completed) {
+      $app.value.style('left', `${$app.scale($data.current[0].key)}px`);
+    } else {
+      $app.value.style('left', `${$app.scale($app.input.property('value'))}px`);
+    }
   }
 
   function pretty(number) {
