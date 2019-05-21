@@ -23,6 +23,8 @@ export default (config) => {
   // Check if user disallows tracking and if we respect that decision
   if (_config.respectDNT && utils.getDNTConsent()) {
     registerTrackers();
+  } else if (!_config.respectDNT) {
+    registerTrackers();
   } else {
     send('custom-dnt-1');
   }

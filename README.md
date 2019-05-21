@@ -56,14 +56,12 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - `guess`: einen Wert schätzen
 
 ## To Do (priorisiert)
-- Vorschaubild und Header
+- Texte im SVG mit Fallback versehen
 - Sharing-Links und Meta-Tags 
-- Text-Overflow im mobilen Layout fixen
 - Sortable: Auflösung animieren
 - Sortable: Benutzerindex anzeigen (?)
 - Drawable: Labels immer im Vordergrund zeichnen
 - Quiz: Hover-State deaktivieren, wenn Quiz ausgewertet wurde
 - Styles für aktiv, falsch, korrekt harmonisieren
-- BR24-Style abgleichen und ggf. anpassen
 - `$config` und `$data.data.config` mergen
 - Funktion `pretty()` modularisieren
