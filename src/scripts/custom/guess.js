@@ -5,7 +5,7 @@ export default function Guess(options) {
   let $state = {};
   let $data = {};
   let $config = {
-    markerSize: 36 / 2
+    markerSize: 30 / 2
   };
 
   function init() {
