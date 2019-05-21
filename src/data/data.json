@@ -31,8 +31,8 @@
     "type": "draw",
     "config": {
       "unit": "%",
-      "max": 25,
-      "breakpoint": 1999
+      "max": 35,
+      "breakpoint": 2004
     },
     "values": [
       { "key": 1999, "value": 8.1 },
