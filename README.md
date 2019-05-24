@@ -58,6 +58,7 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 ## To Do (priorisiert)
 - Sortable: Animation verbessern
 - Drawable: Labels immer im Vordergrund zeichnen
+- Drawable: Kein Labels anzeigen, wenn userState == previousState 
 - Quiz: Hover-State deaktivieren, wenn Quiz ausgewertet wurde
 - `$config` und `$data.data.config` mergen
 - Funktion `pretty()` modularisieren

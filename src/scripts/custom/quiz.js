@@ -1,4 +1,6 @@
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { min, max, shuffle } from 'd3-array';
+import 'd3-transition';
 
 export default function Quiz(options) {
   let $app = {};
@@ -7,7 +9,7 @@ export default function Quiz(options) {
 
   function init() {
     $app.id = options.id;
-    $app.container = d3.select(`#${options.id}`);
+    $app.container = select(`#${options.id}`);
     $data.data = options.data;
 
     transform();
@@ -16,14 +18,14 @@ export default function Quiz(options) {
   // Transform and filter the data for the current dataset
   function transform() {
     $data.current = $data.data.values;
-    $data.user = d3.shuffle($data.current.slice());
+    $data.user = shuffle($data.current.slice());
 
     calculate();
   }
 
   function calculate() {
-    $app.yMin = d3.min($data.current, (d) => d.value);
-    $app.yMax = d3.max($data.current, (d) => d.value);
+    $app.yMin = min($data.current, (d) => d.value);
+    $app.yMax = max($data.current, (d) => d.value);
 
     prepare();
   }
@@ -60,7 +62,7 @@ export default function Quiz(options) {
     if (!$state.completed) {
 
       if (event) {
-        d3.select(this)
+        select(this)
           .classed('wrong', d => !d.correct);
       }
 

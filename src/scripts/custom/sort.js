@@ -1,4 +1,6 @@
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { min, max, descending, shuffle } from 'd3-array';
+import 'd3-transition';
 import * as Sortable from 'sortablejs';
 
 export default function Sort(options) {
@@ -8,7 +10,7 @@ export default function Sort(options) {
 
   function init() {
     $app.id = options.id;
-    $app.container = d3.select(`#${options.id}`);
+    $app.container = select(`#${options.id}`);
     $data.data = options.data;
 
     transform();
@@ -17,16 +19,16 @@ export default function Sort(options) {
   // Transform and filter the data for the current dataset
   function transform() {
     $data.current = $data.data.values.sort((a, b) =>
-      d3[$data.data.config.order](a.value, b.value)
+      descending(a.value, b.value)
     );
-    $data.user = d3.shuffle($data.current.slice());
+    $data.user = shuffle($data.current.slice());
 
     calculate();
   }
 
   function calculate() {
-    $app.yMin = d3.min($data.current, (d) => d.value);
-    $app.yMax = d3.max($data.current, (d) => d.value);
+    $app.yMin = min($data.current, (d) => d.value);
+    $app.yMax = max($data.current, (d) => d.value);
 
     prepare();
   }
@@ -93,7 +95,7 @@ export default function Sort(options) {
   }
 
   function handleTransition() {
-    $app.list.sort((a, b) => d3.descending(a.value, b.value));
+    $app.list.sort((a, b) => descending(a.value, b.value));
 
     $app.list.transition()
       .duration(200)
@@ -144,4 +146,3 @@ export default function Sort(options) {
     resize
   };
 }
-

@@ -1,4 +1,7 @@
-import * as d3 from 'd3';
+import { select } from 'd3-selection';
+import { min, max } from 'd3-array';
+import { scaleLinear } from 'd3-scale';
+import 'd3-transition';
 
 export default function Guess(options) {
   let $app = {};
@@ -10,7 +13,7 @@ export default function Guess(options) {
 
   function init() {
     $app.id = options.id;
-    $app.container = d3.select(`#${options.id}`);
+    $app.container = select(`#${options.id}`);
     $data.data = options.data;
 
     transform();
@@ -24,10 +27,10 @@ export default function Guess(options) {
   }
 
   function calculate() {
-    $app.yMin = d3.min($data.current, (d) => d.value);
-    $app.yMax = d3.max($data.current, (d) => d.value);
+    $app.yMin = min($data.current, (d) => d.value);
+    $app.yMax = max($data.current, (d) => d.value);
 
-    $app.scale = d3.scaleLinear()
+    $app.scale = scaleLinear()
       .domain($data.data.config.range);
 
     prepare();

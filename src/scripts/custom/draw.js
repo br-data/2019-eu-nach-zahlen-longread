@@ -1,4 +1,10 @@
-import * as d3 from 'd3';
+import { select, mouse, event as currentEvent } from 'd3-selection';
+import { min, max } from 'd3-array';
+import { scaleLinear } from 'd3-scale';
+import { line } from 'd3-shape';
+import { drag } from 'd3-drag';
+import { axisBottom, axisRight } from 'd3-axis';
+import 'd3-transition';
 
 export default function Draw(options) {
   let $config;
@@ -38,7 +44,7 @@ export default function Draw(options) {
 
   function init() {
     $app.id = options.id;
-    $app.container = d3.select(`#${options.id}`);
+    $app.container = select(`#${options.id}`);
     $data.data = options.data;
 
     transform();
@@ -62,16 +68,16 @@ export default function Draw(options) {
   function calculate() {
     $app.yMin = 0;
     $app.yMax = $data.data.config.max;
-    $app.xMin = d3.min($data.data.values, d => d.key);
-    $app.xMax = d3.max($data.data.values, d => d.key);
+    $app.xMin = min($data.data.values, d => d.key);
+    $app.xMax = max($data.data.values, d => d.key);
 
-    $app.x = d3.scaleLinear()
+    $app.x = scaleLinear()
       .domain([$app.xMin, $app.xMax]);
 
-    $app.y = d3.scaleLinear()
+    $app.y = scaleLinear()
       .domain([$app.yMin, $app.yMax]);
 
-    $app.lineConstructor = d3.line()
+    $app.lineConstructor = line()
       .x(key)
       .y(value);
 
@@ -163,7 +169,7 @@ export default function Draw(options) {
     $app.hint.group.path = $app.hint.group.append('path');
 
     // Interaction
-    $app.drag = d3.drag()
+    $app.drag = drag()
       .on('drag', handleDrag);
 
     // Interactable area
@@ -203,7 +209,7 @@ export default function Draw(options) {
       .attr('height', $app.height);
 
     // Axis
-    $app.xAxisConstructor = d3.axisBottom()
+    $app.xAxisConstructor = axisBottom()
       .scale($app.x)
       .tickValues($data.data.values.map(d => d.key))
       .tickSizeInner(-$app.height)
@@ -211,7 +217,7 @@ export default function Draw(options) {
       .tickPadding(10)
       .tickFormat(d => d);
 
-    $app.yAxisConstructor = d3.axisRight()
+    $app.yAxisConstructor = axisRight()
       .scale($app.y)
       .ticks(5)
       .tickSizeInner(-$app.width)
@@ -350,7 +356,7 @@ export default function Draw(options) {
 
   function handleDrag() {
     if (!$state.completed) {
-      const pos = d3.mouse(this);
+      const pos = mouse(this);
 
       // Get year (x value) closest to the current cursor position
       const year = Math.max($data.data.config.breakpoint + 1,
@@ -376,8 +382,8 @@ export default function Draw(options) {
     }
 
     // Fix mobile scrolling
-    if (d3.event.defaultPrevented) { return; }
-    if (d3.event.sourceEvent) { d3.event.sourceEvent.stopPropagation(); }
+    if (currentEvent.defaultPrevented) { return; }
+    if (currentEvent.sourceEvent) { currentEvent.sourceEvent.stopPropagation(); }
   }
 
   // User starts drawing
@@ -466,7 +472,7 @@ export default function Draw(options) {
   // Handle mobile touch gesture (allow, disallow scrolling)
   function handleTouchmove() {
     if (!$state.completed) {
-      d3.event.preventDefault();
+      currentEvent.preventDefault();
     }
 
     return $state.completed;
