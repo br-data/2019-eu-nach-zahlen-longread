@@ -1,3 +1,5 @@
+import { pretty } from './utils';
+
 import { select, mouse, event as currentEvent } from 'd3-selection';
 import { min, max } from 'd3-array';
 import { scaleLinear } from 'd3-scale';
@@ -224,7 +226,7 @@ export default function Draw(options) {
       .tickSizeInner(-$app.width)
       .tickSizeOuter(0)
       .tickPadding(10)
-      .tickFormat(d => $state.mobile ? '' : pretty(d));
+      .tickFormat(d => $state.mobile ? '' : ` ${pretty(d)} ${$config.unit}`);
 
     $app.yAxis.group
       .attr('transform', `translate(${$app.width},0)`);
@@ -279,7 +281,7 @@ export default function Draw(options) {
       .attr('font-weight', 'bold')
       .attr('text-anchor', 'end')
       .style('opacity', $state.completed ? 1 : 0) // Hide initially
-      .text(pretty(lastValue($data.current)));
+      .text(`${pretty(lastValue($data.current))} ${$config.unit}`);
 
     // Previous line and maker
     $app.previous.group.line
@@ -303,7 +305,7 @@ export default function Draw(options) {
       .attr('fill', '#102087')
       .attr('font-weight', 'bold')
       .attr('text-anchor', $state.mobile ? 'start' : 'middle')
-      .text(pretty(lastValue($data.previous)));
+      .text(`${pretty(lastValue($data.previous))} ${$config.unit}`);
 
     $app.previous.group.firstLabel
       .attr('transform', firstTranslate($data.previous)) // Smart label
@@ -311,7 +313,7 @@ export default function Draw(options) {
       .attr('fill', '#102087')
       .attr('font-weight', 'bold')
       .attr('text-anchor', 'start')
-      .text(pretty($data.previous[0].value));
+      .text(`${pretty($data.previous[0].value)} ${$config.unit}`);
 
     // Hint
     $app.hint.group
@@ -416,7 +418,7 @@ export default function Draw(options) {
       .attr('transform', translate($data.defined));
 
     $app.user.group.highlight.label
-      .text(pretty(lastValue($data.defined)));
+      .text(`${pretty(lastValue($data.defined))} ${$config.unit}`);
   }
 
   // User completes drawing
@@ -529,16 +531,6 @@ export default function Draw(options) {
     }
 
     return `translate(${$app.x(lastYear(objArr))},${$app.y(lastValue(objArr)) + offset})`;
-  }
-
-  // Add German decimal seperators to number
-  function pretty(number) {
-    let string = Math.round(number).toString().split('.');
-    string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
-
-    string = `${string} ${$config.unit}`;
-
-    return string;
   }
 
   // Get x value for year

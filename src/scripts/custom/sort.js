@@ -1,3 +1,5 @@
+import { pretty } from './utils';
+
 import { select } from 'd3-selection';
 import { min, max, descending, shuffle } from 'd3-array';
 import 'd3-transition';
@@ -118,7 +120,7 @@ export default function Sort(options) {
     $app.list.select('span')
       .text((d, i) => `${$data.userOrder.indexOf(`${i}`) + 1}. ${d.key}: `)
       .append('strong')
-      .text(d => ' ' + pretty(d.value));
+      .text(d => ` ${pretty(d.value)} ${$config.unit}`);
 
     $state.completed = true;
   }
@@ -133,13 +135,6 @@ export default function Sort(options) {
 
   function resize() {
 
-  }
-
-  function pretty(number) {
-    let string = Math.round(number).toString().split('.');
-    string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
-
-    return `${string} ${$config.unit}`;
   }
 
   // Public functions

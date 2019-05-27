@@ -1,3 +1,5 @@
+import { pretty } from './utils';
+
 import { select } from 'd3-selection';
 import { min, max } from 'd3-array';
 import { scaleLinear } from 'd3-scale';
@@ -61,8 +63,7 @@ export default function Guess(options) {
 
     $app.value = $app.guess.append('div')
       .classed('value', true)
-      .style('left',
-        `${$app.scale($config.initial)}px`);
+      .style('left', `${$app.scale($config.initial)}px`);
 
     $app.valueText = $app.value.append('span')
       .text($config.initial);
@@ -84,7 +85,7 @@ export default function Guess(options) {
       .data($app.scale.ticks(5))
       .enter()
       .append('div')
-      .text(d => pretty(d));
+      .text(d => `${pretty(d)} ${$config.unit}`);
 
     $state.started = true;
   }
@@ -145,13 +146,6 @@ export default function Guess(options) {
     } else {
       $app.value.style('left', `${$app.scale($app.input.property('value'))}px`);
     }
-  }
-
-  function pretty(number) {
-    let string = Math.round(number).toString().split('.');
-    string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
-
-    return `${string} ${$config.unit}`;
   }
 
   // Public functions

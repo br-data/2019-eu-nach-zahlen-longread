@@ -1,3 +1,5 @@
+import { pretty } from './utils';
+
 import { select } from 'd3-selection';
 import { min, max, shuffle } from 'd3-array';
 import 'd3-transition';
@@ -72,7 +74,7 @@ export default function Quiz(options) {
         .classed('correct', d => d.correct)
         .text(d => `${d.key}: `)
         .append('strong')
-        .text(d => pretty(d.value));
+        .text(d => `${pretty(d.value)} ${$config.unit}`);
 
       $app.paragraph
         .transition()
@@ -84,7 +86,6 @@ export default function Quiz(options) {
   }
 
   function handleReset() {
-
     $app.answers.remove();
     render();
 
@@ -94,13 +95,6 @@ export default function Quiz(options) {
 
   function resize() {
 
-  }
-
-  function pretty(number) {
-    let string = Math.round(number).toString().split('.');
-    string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
-
-    return `${string} ${$config.unit}`;
   }
 
   // Public functions
