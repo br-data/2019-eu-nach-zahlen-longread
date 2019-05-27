@@ -71,5 +71,3 @@ Zur Zeit gibt es vier verschiedene Fragetypen:
 - Draw: Labels immer im Vordergrund zeichnen
 - Draw: Kein Labels anzeigen, wenn userState == previousState 
 - Quiz: Hover-State deaktivieren, wenn Quiz ausgewertet wurde
-- `$config` und `$data.data.config` mergen
-- Funktion `pretty()` modularisieren
