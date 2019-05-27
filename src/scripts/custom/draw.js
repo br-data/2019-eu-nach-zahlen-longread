@@ -17,8 +17,7 @@ export default function Draw(options) {
 
   $config = {
     height: 270,
-    width: 658,
-    breakpoint: 561
+    width: 658
   };
 
   // Store for SVG elements and calculations
@@ -189,7 +188,7 @@ export default function Draw(options) {
   function resize() {
 
     // Set mobile view depending on screen width
-    $state.mobile = window.innerWidth < $config.breakpoint;
+    $state.mobile = window.innerWidth < 561;
 
     $app.width = $app.container.select('.content').node().getBoundingClientRect().width;
     $app.width = $app.width || $config.width;
