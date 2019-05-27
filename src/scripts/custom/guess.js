@@ -15,6 +15,7 @@ export default function Guess(options) {
     $app.id = options.id;
     $app.container = select(`#${options.id}`);
     $data.data = options.data;
+    $config = Object.assign($config, options.data.config);
 
     transform();
   }
@@ -31,7 +32,7 @@ export default function Guess(options) {
     $app.yMax = max($data.current, (d) => d.value);
 
     $app.scale = scaleLinear()
-      .domain($data.data.config.range);
+      .domain($config.range);
 
     prepare();
   }
@@ -61,10 +62,10 @@ export default function Guess(options) {
     $app.value = $app.guess.append('div')
       .classed('value', true)
       .style('left',
-        `${$app.scale($data.data.config.initial)}px`);
+        `${$app.scale($config.initial)}px`);
 
     $app.valueText = $app.value.append('span')
-      .text($data.data.config.initial);
+      .text($config.initial);
 
     $app.droplet = $app.value.append('div')
       .classed('droplet', true);
@@ -73,8 +74,8 @@ export default function Guess(options) {
       .attr('type', 'range')
       .attr('steps', 1)
       .attr('value', 20)
-      .attr('min', $data.data.config.range[0])
-      .attr('max', $data.data.config.range[1])
+      .attr('min', $config.range[0])
+      .attr('max', $config.range[1])
       .on('input', handleInput);
 
     $app.tickmarks = $app.guess.append('div')
@@ -150,7 +151,7 @@ export default function Guess(options) {
     let string = Math.round(number).toString().split('.');
     string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
 
-    return `${string} ${$data.data.config.unit}`;
+    return `${string} ${$config.unit}`;
   }
 
   // Public functions

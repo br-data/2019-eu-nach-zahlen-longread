@@ -7,11 +7,13 @@ export default function Sort(options) {
   let $app = {};
   let $state = {};
   let $data = {};
+  let $config = {};
 
   function init() {
     $app.id = options.id;
     $app.container = select(`#${options.id}`);
     $data.data = options.data;
+    $config = Object.assign($config, options.data.config);
 
     transform();
   }
@@ -137,7 +139,7 @@ export default function Sort(options) {
     let string = Math.round(number).toString().split('.');
     string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
 
-    return `${string} ${$data.data.config.unit}`;
+    return `${string} ${$config.unit}`;
   }
 
   // Public functions

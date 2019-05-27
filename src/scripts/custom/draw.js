@@ -46,14 +46,15 @@ export default function Draw(options) {
     $app.id = options.id;
     $app.container = select(`#${options.id}`);
     $data.data = options.data;
+    $config = Object.assign($config, options.data.config);
 
     transform();
   }
 
   // Transform and filter the data for the current dataset
   function transform() {
-    $data.previous = $data.data.values.filter(d => d.key <= $data.data.config.breakpoint);
-    $data.current = $data.data.values.filter(d => d.key >= $data.data.config.breakpoint);
+    $data.previous = $data.data.values.filter(d => d.key <= $config.breakpoint);
+    $data.current = $data.data.values.filter(d => d.key >= $config.breakpoint);
     $data.user = clone($data.current).map((d, i) => {
       // Only set the value for the first data point
       d.value = i ? undefined : d.value;
@@ -67,7 +68,7 @@ export default function Draw(options) {
   // Calculate extrema and set element constructors
   function calculate() {
     $app.yMin = 0;
-    $app.yMax = $data.data.config.max;
+    $app.yMax = $config.max;
     $app.xMin = min($data.data.values, d => d.key);
     $app.xMax = max($data.data.values, d => d.key);
 
@@ -359,7 +360,7 @@ export default function Draw(options) {
       const pos = mouse(this);
 
       // Get year (x value) closest to the current cursor position
-      const year = Math.max($data.data.config.breakpoint + 1,
+      const year = Math.max($config.breakpoint + 1,
         Math.min($app.xMax, $app.x.invert(pos[0]))
       );
 
@@ -535,7 +536,7 @@ export default function Draw(options) {
     let string = Math.round(number).toString().split('.');
     string = string[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.') + (string[1] ? `,${string[1]}` : '');
 
-    string = `${string} ${$data.data.config.unit}`;
+    string = `${string} ${$config.unit}`;
 
     return string;
   }
