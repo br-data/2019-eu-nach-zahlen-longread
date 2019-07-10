@@ -73,6 +73,7 @@ export default function Guess(options) {
 
     $app.input = $app.guess.append('input')
       .attr('type', 'range')
+      .attr('aria-label', 'Wert auswählen')
       .attr('steps', 1)
       .attr('value', 20)
       .attr('min', $config.range[0])
