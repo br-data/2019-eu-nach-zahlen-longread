@@ -1,8 +1,8 @@
 # EU nach Zahlen
 Populismus, Wirtschaftskraft, Demografie: Europa verändert sich. Was hat sich getan? Zeichnen Sie die Diagramme und schätzen Sie die Werte.
 
-- Artikel: https://web.br.de/interaktiv/eu-nach-zahlen/
-- Redirect: http://br.de/eu-nach-zahlen/
+- Artikel: <https://web.br.de/interaktiv/eu-nach-zahlen>
+- Redirect: <https://br.de/eu-nach-zahlen>
 
 ## Verwendung
 1. Repository klonen `git clone https://...`
